@@ -1,0 +1,9 @@
+cloudflared
+eza
+git
+jandedobbeleer/oh-my-posh/oh-my-posh
+jesseduffield/lazygit/lazygit
+neovim
+stow
+tmux
+zsh-autosuggestions
