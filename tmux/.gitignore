@@ -1,2 +1,3 @@
-plugins/
 *.log
+/plugins/*
+!/plugins/catppuccin/
