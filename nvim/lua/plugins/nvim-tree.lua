@@ -14,13 +14,14 @@ return {
 			diagnostics = {
 				enable = true,
 			},
-			hijack_netrw = true,
 			hijack_cursor = true,
-			hijack_unnamed_buffer_when_opening = false,
 			sync_root_with_cwd = true,
 			update_focused_file = {
 				enable = true,
 				update_root = false,
+			},
+			filesystem_watchers = {
+				enable = true,
 			},
 			view = {
 				adaptive_size = false,
@@ -43,7 +44,7 @@ return {
 				highlight_opened_files = "none",
 
 				indent_markers = {
-					enable = false,
+					enable = true,
 				},
 
 				icons = {
@@ -82,14 +83,12 @@ return {
 		})
 
 		-- highlights
-		vim.cmd([[highlight NvimTreeGitFileNewHL guifg=#2ecc71]])
-		vim.cmd([[highlight NvimTreeGitFileDirtyHL guifg=#FFA500]])
-		vim.cmd([[highlight NvimTreeGitFileStagedHL guifg=#5ea1ff]])
+		vim.cmd([[highlight NvimTreeGitFileNewHL guifg=#73c991]])
+		vim.cmd([[highlight NvimTreeGitFileDirtyHL guifg=#e1c08d]])
 		vim.cmd([[highlight NvimTreeGitFileMergeHL guifg=#D9534F]])
 
-		vim.cmd([[highlight NvimTreeGitFolderNewHL guifg=#2ecc71]])
-		vim.cmd([[highlight NvimTreeGitFolderDirtyHL guifg=#FFA500]])
-		vim.cmd([[highlight NvimTreeGitFolderStagedHL guifg=#5ea1ff]])
+		vim.cmd([[highlight NvimTreeGitFolderNewHL guifg=#73c991]])
+		vim.cmd([[highlight NvimTreeGitFolderDirtyHL guifg=#e1c08d]])
 		vim.cmd([[highlight NvimTreeGitFileMergeHL guifg=#D9534F]])
 
 		-- set keymaps
