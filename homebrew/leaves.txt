@@ -1,9 +1,14 @@
 cloudflared
 eza
+fastfetch
+fzf
 git
 jandedobbeleer/oh-my-posh/oh-my-posh
 jesseduffield/lazygit/lazygit
 neovim
+ripgrep
 stow
+tlrc
 tmux
-zsh-autosuggestions
+zoxide
+wezterm

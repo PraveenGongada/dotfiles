@@ -14,13 +14,21 @@ config = {
 		{ family = "Maple Mono NF", harfbuzz_features = { "ss02", "cv03" } },
 		{ family = "JetBrainsMono Nerd Font" },
 	}),
-	font_size = 14,
+	font_size = 13,
 	line_height = 1.15,
 	window_padding = {
 		left = 0,
 		right = 0,
 		top = 0,
 		bottom = 0,
+	},
+	mouse_bindings = {
+		-- Command + Click to open links
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "CMD",
+			action = wezterm.action.OpenLinkAtMouseCursor,
+		},
 	},
 	background = {
 		{

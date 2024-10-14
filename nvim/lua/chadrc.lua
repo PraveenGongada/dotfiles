@@ -13,7 +13,7 @@ M.base46 = {
 	},
 	changed_themes = {},
 	integrations = {},
-	theme_toggle = { "ayu_light", "onedark" },
+	theme_toggle = { "ayu_dark", "onedark" },
 	theme = "ayu_dark", -- default themes
 	transparency = true,
 }

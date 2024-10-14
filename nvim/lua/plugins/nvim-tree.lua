@@ -24,14 +24,14 @@ return {
 				enable = true,
 			},
 			view = {
-				adaptive_size = false,
+				adaptive_size = true,
 				side = "left",
 				width = 30,
 				preserve_window_proportions = true,
 			},
 			git = {
 				enable = true,
-				ignore = true,
+				ignore = false,
 			},
 			actions = {
 				open_file = {

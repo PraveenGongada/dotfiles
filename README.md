@@ -52,7 +52,7 @@ $ echo 'export ZDOTDIR="$HOME/.config/zshrc"' >> ~/.zshenv
 
 ```bash
 # Backing up data
-$ brew leaves > ~/.config/homebrew/leaves.txt
+$ { brew leaves -r; brew list --cask; } > ~/.config/homebrew/leaves.txt
 ```
 
 ```bash
