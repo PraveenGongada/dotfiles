@@ -1,4 +1,6 @@
-local opt = vim.opt -- for conciseness
+-- for conciseness
+local opt = vim.opt
+local g = vim.g
 
 -- General Settings
 opt.laststatus = 3 -- Use a global statusline
@@ -50,3 +52,7 @@ opt.whichwrap:append("<>[]hl") -- Allow the cursor to move to the next/previous 
 
 -- Scrolling
 opt.scrolloff = 10 -- Keep at least 10 lines visible above and below the cursor during scrolling
+
+-- Disable netrw
+g.loaded_netrw = 1 -- Prevent netrw from loading, avoiding conflicts with nvim-tree
+g.loaded_netrwPlugin = 1 -- Disable the netrw plugin as well, fully disabling netrw

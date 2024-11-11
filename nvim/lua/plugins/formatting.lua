@@ -18,6 +18,7 @@ return {
 				html = { "prettierd" },
 				json = { "prettierd" },
 				yaml = { "prettierd" },
+				sh = { "shfmt" },
 				markdown = { "prettierd" },
 				lua = { "stylua" },
 				go = { "gofumpt", "goimports-reviser", "golines" },

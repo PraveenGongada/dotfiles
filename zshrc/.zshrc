@@ -25,6 +25,7 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light jeffreytse/zsh-vi-mode
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -39,11 +40,6 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# Keybindings
-bindkey -e
-bindkey '^j' history-search-backward
-bindkey '^k' history-search-forward
-
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -56,6 +52,22 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# Zsh Vi Mode 
+# Following 4 lines modify the escape key to `jj`
+ZVM_VI_ESCAPE_BINDKEY=jj
+ZVM_VI_INSERT_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
+ZVM_VI_VISUAL_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
+ZVM_VI_OPPEND_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
+
+function zvm_after_lazy_keybindings() {
+  # Remap toggle history 
+  zvm_bindkey vicmd 'j' up-line-or-history
+  zvm_bindkey vicmd 'k' down-line-or-history
+}
+
+# Source .fzf.zsh so that the ctrl+r bindkey is given back fzf
+zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
 
 # Syntax Hihghlighting
 typeset -A ZSH_HIGHLIGHT_STYLES

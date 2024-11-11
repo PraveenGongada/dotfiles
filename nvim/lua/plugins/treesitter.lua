@@ -21,6 +21,7 @@ return {
 				"vimdoc",
 				"purescript",
 				"rescript",
+				"bash",
 			},
 			highlight = {
 				enable = true,

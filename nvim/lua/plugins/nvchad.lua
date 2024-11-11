@@ -10,14 +10,11 @@ return {
 		"PraveenGongada/ui",
 		dependencies = {
 			"Nvchad/volt",
-			-- "nvchad/minty",
-			-- "nvchad/menu",
 		},
 		config = function()
 			require("nvchad")
 
 			-- mappings
-
 			local keymap = vim.keymap
 
 			-- Tabufline Management

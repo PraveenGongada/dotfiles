@@ -22,23 +22,14 @@ config = {
 		top = 0,
 		bottom = 0,
 	},
+	window_background_opacity = 0.6,
+	macos_window_background_blur = 25,
 	mouse_bindings = {
 		-- Command + Click to open links
 		{
 			event = { Up = { streak = 1, button = "Left" } },
 			mods = "CMD",
 			action = wezterm.action.OpenLinkAtMouseCursor,
-		},
-	},
-	background = {
-		{
-			source = {
-				File = "/Users/" .. os.getenv("USER") .. "/.config/wallpapers/bg-blurred.png",
-			},
-			hsb = {
-				saturation = 1.2,
-				brightness = 0.3,
-			},
 		},
 	},
 	colors = {
@@ -79,3 +70,16 @@ config = {
 }
 
 return config
+
+-- Adding an image backgroud
+-- background = {
+-- 	{
+-- 		source = {
+-- 			File = "/Users/" .. os.getenv("USER") .. "/.config/wallpapers/bg-blurred.png",
+-- 		},
+-- 		hsb = {
+-- 			saturation = 1.2,
+-- 			brightness = 0.3,
+-- 		},
+-- 	},
+-- }
