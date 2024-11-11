@@ -14,7 +14,7 @@ config = {
 		{ family = "Maple Mono NF", harfbuzz_features = { "ss02", "cv03" } },
 		{ family = "JetBrainsMono Nerd Font" },
 	}),
-	font_size = 13,
+	font_size = 12,
 	line_height = 1.15,
 	window_padding = {
 		left = 0,

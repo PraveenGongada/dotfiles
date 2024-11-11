@@ -31,7 +31,7 @@ return {
 			},
 			git = {
 				enable = true,
-				ignore = false,
+				ignore = true,
 			},
 			actions = {
 				open_file = {

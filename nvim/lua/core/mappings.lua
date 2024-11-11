@@ -81,8 +81,13 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<Space>", "<Nop>", { desc = "Disable space key's default behaviour", silent = true })
 
 -- Telescope
-keymap.set("n", "ff", "<cmd> Telescope find_files <CR>", { desc = "Find files" }) -- Add this to enable preview -> previewer=true
-keymap.set("n", "fa", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", { desc = "Find all" })
+keymap.set("n", "ff", "<cmd> Telescope find_files previewer=false <CR>", { desc = "Find files" }) -- Add this to enable preview -> previewer=true
+keymap.set(
+	"n",
+	"fa",
+	"<cmd> Telescope find_files follow=true no_ignore=true hidden=true previewer=false <CR>",
+	{ desc = "Find all" }
+)
 keymap.set("n", "fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
 keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>", { desc = "Help page" })
@@ -94,7 +99,7 @@ keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 -- Telescope bookmarks
 keymap.set("n", "<leader>ma", "<cmd> Telescope marks <CR>", { desc = "Telescope bookmarks" })
 
--- Telescopt Git
+-- Telescope Git
 keymap.set("n", "<leader>gc", "<cmd> Telescope git_commits <CR>", { desc = "Git commits" })
 keymap.set("n", "<leader>gs", "<cmd> Telescope git_status <CR>", { desc = "Git status" })
 

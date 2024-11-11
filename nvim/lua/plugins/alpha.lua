@@ -11,6 +11,9 @@ return {
 		local header = {
 			[[                                                                       ]],
 			[[                                                                       ]],
+			[[                                                                       ]],
+			[[                                                                       ]],
+			[[                                                                       ]],
 			[[                                                                     ]],
 			[[       ████ ██████           █████      ██                     ]],
 			[[      ███████████             █████                             ]],
@@ -30,7 +33,7 @@ return {
 
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "   File explorer", ":NvimTreeToggle <CR>"),
-			dashboard.button("f", "   Find file", ":Telescope find_files<CR>"),
+			dashboard.button("f", "   Find file", ":Telescope find_files previewer=false<CR>"),
 			dashboard.button("w", "󰱼   Find word", ":Telescope live_grep<CR>"),
 			dashboard.button("r", "   Recent", ":Telescope oldfiles<CR>"),
 			dashboard.button("c", "   Config", ":e $MYVIMRC <CR>"),
