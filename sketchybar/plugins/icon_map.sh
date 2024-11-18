@@ -1,123 +1,421 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-function icon_map() {
+### START-OF-ICON-MAP
+function __icon_map() {
   case "$1" in
-  "Keynote" | "Keynote 讲演")
-    icon_result=":keynote:"
+  "Live")
+    icon_result=":ableton:"
     ;;
-  "Figma")
-    icon_result=":figma:"
+  "Adobe Bridge"*)
+    icon_result=":adobe_bridge:"
     ;;
-  "VMware Fusion")
-    icon_result=":vmware_fusion:"
+  "Affinity Designer")
+    icon_result=":affinity_designer:"
     ;;
-  "Alacritty" | "Hyper" | "iTerm2" | "kitty" | "Terminal" | "终端" | "WezTerm")
-    icon_result=":terminal:"
+  "Affinity Designer 2")
+    icon_result=":affinity_designer_2:"
     ;;
-  "Microsoft To Do" | "Things")
-    icon_result=":things:"
+  "Affinity Photo")
+    icon_result=":affinity_photo:"
     ;;
-  "Keyboard Maestro")
-    icon_result=":keyboard_maestro:"
+  "Affinity Photo 2")
+    icon_result=":affinity_photo_2:"
     ;;
-  "App Store")
-    icon_result=":app_store:"
+  "Affinity Publisher")
+    icon_result=":affinity_publisher:"
     ;;
-  "CleanMyMac X")
-    icon_result=":desktop:"
+  "Affinity Publisher 2")
+    icon_result=":affinity_publisher_2:"
+    ;;
+  "Airmail")
+    icon_result=":airmail:"
+    ;;
+  "Alacritty")
+    icon_result=":alacritty:"
+    ;;
+  "Alfred")
+    icon_result=":alfred:"
     ;;
   "Android Messages")
     icon_result=":android_messages:"
     ;;
-  "Reeder")
-    icon_result=":reeder5:"
+  "Android Studio")
+    icon_result=":android_studio:"
     ;;
-  "Joplin")
-    icon_result=":joplin:"
+  "Anki")
+    icon_result=":anki:"
     ;;
-  "Discord" | "Discord Canary" | "Discord PTB")
-    icon_result=":discord:"
+  "Anytype")
+    icon_result=":anytype:"
     ;;
-  "Logseq")
-    icon_result=":logseq:"
+  "App Eraser")
+    icon_result=":app_eraser:"
     ;;
-  "Microsoft Excel")
-    icon_result=":microsoft_excel:"
+  "App Store")
+    icon_result=":app_store:"
     ;;
-  "Microsoft PowerPoint")
-    icon_result=":microsoft_power_point:"
+  "Arc")
+    icon_result=":arc:"
     ;;
-  "Telegram")
-    icon_result=":telegram:"
+  "Arduino" | "Arduino IDE")
+    icon_result=":arduino:"
     ;;
-  "Transmit")
-    icon_result=":transmit:"
+  "Atom")
+    icon_result=":atom:"
     ;;
-  "Pi-hole Remote")
-    icon_result=":pihole:"
+  "Audacity")
+    icon_result=":audacity:"
     ;;
-  "League of Legends")
-    icon_result=":league_of_legends:"
+  "Bambu Studio")
+    icon_result=":bambu_studio:"
     ;;
-  "Element")
-    icon_result=":element:"
+  "MoneyMoney")
+    icon_result=":bank:"
     ;;
-  "Zulip")
-    icon_result=":zulip:"
+  "Battle.net")
+    icon_result=":battle_net:"
     ;;
-  "Sequel Ace")
-    icon_result=":sequel_ace:"
+  "Bear")
+    icon_result=":bear:"
     ;;
-  "Zed")
-    icon_result=":zed:"
+  "BetterTouchTool")
+    icon_result=":bettertouchtool:"
     ;;
-  "TeamSpeak 3")
-    icon_result=":team_speak:"
+  "Bilibili" | "哔哩哔哩")
+    icon_result=":bilibili:"
     ;;
-  "1Password")
-    icon_result=":one_password:"
+  "Bitwarden")
+    icon_result=":bit_warden:"
+    ;;
+  "Blender")
+    icon_result=":blender:"
+    ;;
+  "BluOS Controller")
+    icon_result=":bluos_controller:"
+    ;;
+  "Calibre")
+    icon_result=":book:"
+    ;;
+  "Brave Browser")
+    icon_result=":brave_browser:"
+    ;;
+  "BusyCal")
+    icon_result=":busycal:"
+    ;;
+  "Calculator" | "Calculette")
+    icon_result=":calculator:"
+    ;;
+  "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie" | "Calendrier" | "Notion Calendar")
+    icon_result=":calendar:"
     ;;
   "Caprine")
     icon_result=":caprine:"
     ;;
-  "카카오톡")
-    icon_result=":kakaotalk:"
+  "Amazon Chime")
+    icon_result=":chime:"
+    ;;
+  "Citrix Workspace" | "Citrix Viewer")
+    icon_result=":citrix:"
+    ;;
+  "Claude")
+    icon_result=":claude:"
+    ;;
+  "ClickUp")
+    icon_result=":click_up:"
+    ;;
+  "Code" | "Code - Insiders")
+    icon_result=":code:"
+    ;;
+  "Cold Turkey Blocker")
+    icon_result=":cold_turkey_blocker:"
+    ;;
+  "Color Picker" | "数码测色计")
+    icon_result=":color_picker:"
+    ;;
+  "Copilot")
+    icon_result=":copilot:"
+    ;;
+  "CotEditor")
+    icon_result=":coteditor:"
+    ;;
+  "Creative Cloud")
+    icon_result=":creative_cloud:"
+    ;;
+  "Cursor")
+    icon_result=":cursor:"
+    ;;
+  "Cypress")
+    icon_result=":cypress:"
+    ;;
+  "DataGrip")
+    icon_result=":datagrip:"
+    ;;
+  "DataSpell")
+    icon_result=":dataspell:"
+    ;;
+  "DaVinci Resolve")
+    icon_result=":davinciresolve:"
+    ;;
+  "Deezer")
+    icon_result=":deezer:"
+    ;;
+  "Default")
+    icon_result=":default:"
+    ;;
+  "CleanMyMac X")
+    icon_result=":desktop:"
+    ;;
+  "DEVONthink 3")
+    icon_result=":devonthink3:"
+    ;;
+  "DingTalk" | "钉钉" | "阿里钉")
+    icon_result=":dingtalk:"
+    ;;
+  "Discord" | "Discord Canary" | "Discord PTB")
+    icon_result=":discord:"
+    ;;
+  "Docker" | "Docker Desktop")
+    icon_result=":docker:"
+    ;;
+  "GrandTotal" | "Receipts")
+    icon_result=":dollar:"
+    ;;
+  "Double Commander")
+    icon_result=":doublecmd:"
+    ;;
+  "Drafts")
+    icon_result=":drafts:"
+    ;;
+  "draw.io")
+    icon_result=":draw_io:"
     ;;
   "Dropbox")
     icon_result=":dropbox:"
     ;;
-  "Kakoune")
-    icon_result=":kakoune:"
+  "Element")
+    icon_result=":element:"
     ;;
-  "Rider" | "JetBrains Rider")
-    icon_result=":rider:"
+  "Emacs")
+    icon_result=":emacs:"
     ;;
-  "Godot")
-    icon_result=":godot:"
+  "Evernote Legacy")
+    icon_result=":evernote_legacy:"
     ;;
-  "qutebrowser")
-    icon_result=":qute_browser:"
+  "FaceTime" | "FaceTime 通话")
+    icon_result=":face_time:"
     ;;
-  "Typora")
-    icon_result=":text:"
+  "Figma")
+    icon_result=":figma:"
     ;;
-  "Sequel Pro")
-    icon_result=":sequel_pro:"
-    ;;
-  "Reminders" | "提醒事项")
-    icon_result=":reminders:"
-    ;;
-  "Setapp")
-    icon_result=":setapp:"
+  "Final Cut Pro")
+    icon_result=":final_cut_pro:"
     ;;
   "Finder" | "访达")
     icon_result=":finder:"
     ;;
-  "Matlab")
-    icon_result=":matlab:"
+  "Firefox")
+    icon_result=":firefox:"
+    ;;
+  "Firefox Developer Edition" | "Firefox Nightly")
+    icon_result=":firefox_developer_edition:"
+    ;;
+  "Folx")
+    icon_result=":folx:"
+    ;;
+  "Fork")
+    icon_result=":fork:"
+    ;;
+  "FreeTube")
+    icon_result=":freetube:"
+    ;;
+  "Fusion")
+    icon_result=":fusion:"
+    ;;
+  "System Preferences" | "System Settings" | "系统设置" | "Réglages Système")
+    icon_result=":gear:"
+    ;;
+  "GitHub Desktop")
+    icon_result=":git_hub:"
+    ;;
+  "Godot")
+    icon_result=":godot:"
+    ;;
+  "GoLand")
+    icon_result=":goland:"
+    ;;
+  "Chromium" | "Google Chrome" | "Google Chrome Canary")
+    icon_result=":google_chrome:"
+    ;;
+  "Grammarly Editor")
+    icon_result=":grammarly:"
+    ;;
+  "Home Assistant")
+    icon_result=":home_assistant:"
+    ;;
+  "Hyper")
+    icon_result=":hyper:"
+    ;;
+  "IntelliJ IDEA")
+    icon_result=":idea:"
+    ;;
+  "IINA")
+    icon_result=":iina:"
+    ;;
+  "Adobe Illustrator"* | "Illustrator")
+    icon_result=":illustrator:"
+    ;;
+  "Adobe InDesign"* | "InDesign")
+    icon_result=":indesign:"
+    ;;
+  "Inkdrop")
+    icon_result=":inkdrop:"
+    ;;
+  "Inkscape")
+    icon_result=":inkscape:"
+    ;;
+  "Insomnia")
+    icon_result=":insomnia:"
+    ;;
+  "Iris")
+    icon_result=":iris:"
+    ;;
+  "iTerm" | "iTerm2")
+    icon_result=":iterm:"
+    ;;
+  "Jellyfin Media Player")
+    icon_result=":jellyfin:"
+    ;;
+  "Joplin")
+    icon_result=":joplin:"
+    ;;
+  "카카오톡" | "KakaoTalk")
+    icon_result=":kakaotalk:"
+    ;;
+  "Kakoune")
+    icon_result=":kakoune:"
+    ;;
+  "KeePassXC")
+    icon_result=":kee_pass_x_c:"
+    ;;
+  "Keyboard Maestro")
+    icon_result=":keyboard_maestro:"
+    ;;
+  "Keynote" | "Keynote 讲演")
+    icon_result=":keynote:"
+    ;;
+  "kitty")
+    icon_result=":kitty:"
+    ;;
+  "League of Legends")
+    icon_result=":league_of_legends:"
     ;;
   "LibreWolf")
     icon_result=":libre_wolf:"
+    ;;
+  "Adobe Lightroom")
+    icon_result=":lightroom:"
+    ;;
+  "Lightroom Classic")
+    icon_result=":lightroomclassic:"
+    ;;
+  "LINE")
+    icon_result=":line:"
+    ;;
+  "Linear")
+    icon_result=":linear:"
+    ;;
+  "LM Studio")
+    icon_result=":lm_studio:"
+    ;;
+  "LocalSend")
+    icon_result=":localsend:"
+    ;;
+  "Logic Pro")
+    icon_result=":logicpro:"
+    ;;
+  "Logseq")
+    icon_result=":logseq:"
+    ;;
+  "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "Superhuman" | "Spark" | "邮件")
+    icon_result=":mail:"
+    ;;
+  "MAMP" | "MAMP PRO")
+    icon_result=":mamp:"
+    ;;
+  "Maps" | "Google Maps")
+    icon_result=":maps:"
+    ;;
+  "Marta")
+    icon_result=":marta:"
+    ;;
+  "Matlab")
+    icon_result=":matlab:"
+    ;;
+  "Mattermost")
+    icon_result=":mattermost:"
+    ;;
+  "Messages" | "信息" | "Nachrichten")
+    icon_result=":messages:"
+    ;;
+  "Messenger")
+    icon_result=":messenger:"
+    ;;
+  "Microsoft Edge")
+    icon_result=":microsoft_edge:"
+    ;;
+  "Microsoft Excel")
+    icon_result=":microsoft_excel:"
+    ;;
+  "Microsoft Outlook")
+    icon_result=":microsoft_outlook:"
+    ;;
+  "Microsoft PowerPoint")
+    icon_result=":microsoft_power_point:"
+    ;;
+  "Microsoft Remote Desktop")
+    icon_result=":microsoft_remote_desktop:"
+    ;;
+  "Microsoft Teams" | "Microsoft Teams (work or school)")
+    icon_result=":microsoft_teams:"
+    ;;
+  "Microsoft Word")
+    icon_result=":microsoft_word:"
+    ;;
+  "Min")
+    icon_result=":min_browser:"
+    ;;
+  "Miro")
+    icon_result=":miro:"
+    ;;
+  "MongoDB Compass"*)
+    icon_result=":mongodb:"
+    ;;
+  "mpv")
+    icon_result=":mpv:"
+    ;;
+  "Mullvad Browser")
+    icon_result=":mullvad_browser:"
+    ;;
+  "Music" | "音乐" | "Musique")
+    icon_result=":music:"
+    ;;
+  "Neovide" | "neovide")
+    icon_result=":neovide:"
+    ;;
+  "Neovim" | "neovim" | "nvim")
+    icon_result=":neovim:"
+    ;;
+  "网易云音乐")
+    icon_result=":netease_music:"
+    ;;
+  "Noodl" | "Noodl Editor")
+    icon_result=":noodl:"
+    ;;
+  "NordVPN")
+    icon_result=":nord_vpn:"
+    ;;
+  "Notability")
+    icon_result=":notability:"
     ;;
   "Notes" | "备忘录")
     icon_result=":notes:"
@@ -125,86 +423,200 @@ function icon_map() {
   "Notion")
     icon_result=":notion:"
     ;;
-  "Brave Browser")
-    icon_result=":brave_browser:"
+  "Nova")
+    icon_result=":nova:"
     ;;
-  "Spotlight")
-    icon_result=":spotlight:"
+  "Numbers" | "Numbers 表格")
+    icon_result=":numbers:"
     ;;
-  "Iris")
-    icon_result=":iris:"
+  "Obsidian")
+    icon_result=":obsidian:"
     ;;
-  "Tower")
-    icon_result=":tower:"
+  "OBS")
+    icon_result=":obsstudio:"
     ;;
-  "Jellyfin Media Player")
-    icon_result=":jellyfin:"
+  "OmniFocus")
+    icon_result=":omni_focus:"
     ;;
-  "Code" | "Code - Insiders")
-    icon_result=":code:"
+  "1Password")
+    icon_result=":one_password:"
     ;;
-  "Linear")
-    icon_result=":linear:"
+  "Open Video Downloader")
+    icon_result=":open_video_downloader:"
     ;;
-  "Live")
-    icon_result=":ableton:"
+  "ChatGPT")
+    icon_result=":openai:"
     ;;
-  "Parallels Desktop")
-    icon_result=":parallels:"
+  "OpenVPN Connect")
+    icon_result=":openvpn_connect:"
     ;;
-  "Final Cut Pro")
-    icon_result=":final_cut_pro:"
+  "Opera")
+    icon_result=":opera:"
     ;;
-  "Chromium" | "Google Chrome" | "Google Chrome Canary")
-    icon_result=":google_chrome:"
+  "OrbStack")
+    icon_result=":orbstack:"
     ;;
-  "GitHub Desktop")
-    icon_result=":git_hub:"
+  "OrcaSlicer")
+    icon_result=":orcaslicer:"
     ;;
-  "Firefox")
-    icon_result=":firefox:"
-    ;;
-  "Slack")
-    icon_result=":slack:"
-    ;;
-  "Spotify")
-    icon_result=":spotify:"
-    ;;
-  "Neovide" | "MacVim" | "Vim" | "VimR")
-    icon_result=":vim:"
-    ;;
-  "KeePassXC")
-    icon_result=":kee_pass_x_c:"
-    ;;
-  "PomoDone App")
-    icon_result=":pomodone:"
-    ;;
-  "DEVONthink 3")
-    icon_result=":devonthink3:"
-    ;;
-  "Color Picker" | "数码测色计")
-    icon_result=":color_picker:"
-    ;;
-  "Tweetbot" | "Twitter")
-    icon_result=":twitter:"
-    ;;
-  "Default")
-    icon_result=":default:"
+  "Orion" | "Orion RC")
+    icon_result=":orion:"
     ;;
   "Pages" | "Pages 文稿")
     icon_result=":pages:"
     ;;
-  "Emacs")
-    icon_result=":emacs:"
+  "Parallels Desktop")
+    icon_result=":parallels:"
     ;;
-  "MAMP" | "MAMP PRO")
-    icon_result=":mamp:"
+  "Parsec")
+    icon_result=":parsec:"
     ;;
-  "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "邮件")
-    icon_result=":mail:"
+  "Preview" | "预览" | "Skim" | "zathura" | "Aperçu")
+    icon_result=":pdf:"
     ;;
-  "WebStorm")
-    icon_result=":web_storm:"
+  "PDF Expert")
+    icon_result=":pdf_expert:"
+    ;;
+  "Pearcleaner")
+    icon_result=":pearcleaner:"
+    ;;
+  "Phoenix Slides")
+    icon_result=":phoenix_slides:"
+    ;;
+  "Adobe Photoshop"*)
+    icon_result=":photoshop:"
+    ;;
+  "PhpStorm")
+    icon_result=":php_storm:"
+    ;;
+  "Pi-hole Remote")
+    icon_result=":pihole:"
+    ;;
+  "Pine")
+    icon_result=":pine:"
+    ;;
+  "Plex")
+    icon_result=":plex:"
+    ;;
+  "Plexamp")
+    icon_result=":plexamp:"
+    ;;
+  "Podcasts" | "播客")
+    icon_result=":podcasts:"
+    ;;
+  "PomoDone App")
+    icon_result=":pomodone:"
+    ;;
+  "Postman")
+    icon_result=":postman:"
+    ;;
+  "Proton Mail" | "Proton Mail Bridge")
+    icon_result=":proton_mail:"
+    ;;
+  "PrusaSlicer" | "SuperSlicer")
+    icon_result=":prusaslicer:"
+    ;;
+  "PyCharm")
+    icon_result=":pycharm:"
+    ;;
+  "QQ")
+    icon_result=":qq:"
+    ;;
+  "QQ音乐" | "QQMusic")
+    icon_result=":qqmusic:"
+    ;;
+  "Quantumult X")
+    icon_result=":quantumult_x:"
+    ;;
+  "qutebrowser")
+    icon_result=":qute_browser:"
+    ;;
+  "Raindrop.io")
+    icon_result=":raindrop_io:"
+    ;;
+  "Reeder")
+    icon_result=":reeder5:"
+    ;;
+  "Reminders" | "提醒事项" | "Rappels")
+    icon_result=":reminders:"
+    ;;
+  "Replit")
+    icon_result=":replit:"
+    ;;
+  "Rider" | "JetBrains Rider")
+    icon_result=":rider:"
+    ;;
+  "Rio")
+    icon_result=":rio:"
+    ;;
+  "Royal TSX")
+    icon_result=":royaltsx:"
+    ;;
+  "Safari" | "Safari浏览器" | "Safari Technology Preview")
+    icon_result=":safari:"
+    ;;
+  "Sequel Ace")
+    icon_result=":sequel_ace:"
+    ;;
+  "Sequel Pro")
+    icon_result=":sequel_pro:"
+    ;;
+  "Setapp")
+    icon_result=":setapp:"
+    ;;
+  "SF Symbols")
+    icon_result=":sf_symbols:"
+    ;;
+  "Signal")
+    icon_result=":signal:"
+    ;;
+  "sioyek")
+    icon_result=":sioyek:"
+    ;;
+  "Sketch")
+    icon_result=":sketch:"
+    ;;
+  "Skype")
+    icon_result=":skype:"
+    ;;
+  "Slack")
+    icon_result=":slack:"
+    ;;
+  "Spark Desktop")
+    icon_result=":spark:"
+    ;;
+  "Spotify")
+    icon_result=":spotify:"
+    ;;
+  "Spotlight")
+    icon_result=":spotlight:"
+    ;;
+  "Sublime Text")
+    icon_result=":sublime_text:"
+    ;;
+  "superProductivity")
+    icon_result=":superproductivity:"
+    ;;
+  "Tana")
+    icon_result=":tana:"
+    ;;
+  "TeamSpeak 3")
+    icon_result=":team_speak:"
+    ;;
+  "Telegram")
+    icon_result=":telegram:"
+    ;;
+  "Terminal" | "终端")
+    icon_result=":terminal:"
+    ;;
+  "Typora")
+    icon_result=":text:"
+    ;;
+  "Microsoft To Do" | "Things")
+    icon_result=":things:"
+    ;;
+  "Thunderbird")
+    icon_result=":thunderbird:"
     ;;
   "TickTick")
     icon_result=":tick_tick:"
@@ -212,225 +624,96 @@ function icon_map() {
   "TIDAL")
     icon_result=":tidal:"
     ;;
-  "VLC")
-    icon_result=":vlc:"
-    ;;
-  "Blender")
-    icon_result=":blender:"
-    ;;
-  "Music" | "音乐")
-    icon_result=":music:"
-    ;;
-  "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie")
-    icon_result=":calendar:"
-    ;;
-  "Evernote Legacy")
-    icon_result=":evernote_legacy:"
-    ;;
-  "Microsoft Word")
-    icon_result=":microsoft_word:"
-    ;;
-  "Safari" | "Safari浏览器" | "Safari Technology Preview")
-    icon_result=":safari:"
-    ;;
-  "MoneyMoney")
-    icon_result=":bank:"
-    ;;
-  "Xcode")
-    icon_result=":xcode:"
-    ;;
-  "Numbers" | "Numbers 表格")
-    icon_result=":numbers:"
-    ;;
-  "ClickUp")
-    icon_result=":click_up:"
-    ;;
-  "Arc")
-    icon_result=":arc:"
-    ;;
-  "Zeplin")
-    icon_result=":zeplin:"
-    ;;
-  "Trello")
-    icon_result=":trello:"
-    ;;
-  "Vivaldi")
-    icon_result=":vivaldi:"
-    ;;
-  "Calibre")
-    icon_result=":book:"
-    ;;
-  "Min")
-    icon_result=":min_browser:"
-    ;;
-  "网易云音乐")
-    icon_result=":netease_music:"
-    ;;
-  "GrandTotal" | "Receipts")
-    icon_result=":dollar:"
-    ;;
-  "zoom.us")
-    icon_result=":zoom:"
-    ;;
-  "Folx")
-    icon_result=":folx:"
-    ;;
-  "微信")
-    icon_result=":wechat:"
-    ;;
-  "Orion" | "Orion RC")
-    icon_result=":orion:"
-    ;;
-  "Notability")
-    icon_result=":notability:"
+  "Tiny RDM")
+    icon_result=":tinyrdm:"
     ;;
   "Todoist")
     icon_result=":todoist:"
     ;;
-  "Replit")
-    icon_result=":replit:"
+  "Toggl Track")
+    icon_result=":toggl_track:"
     ;;
   "Tor Browser")
     icon_result=":tor_browser:"
     ;;
-  "Drafts")
-    icon_result=":drafts:"
+  "Tower")
+    icon_result=":tower:"
     ;;
-  "Preview" | "预览" | "Skim" | "zathura")
-    icon_result=":pdf:"
+  "Transmit")
+    icon_result=":transmit:"
     ;;
-  "PyCharm")
-    icon_result=":pycharm:"
+  "Trello")
+    icon_result=":trello:"
     ;;
-  "Audacity")
-    icon_result=":audacity:"
+  "Tweetbot" | "Twitter")
+    icon_result=":twitter:"
     ;;
-  "Cypress")
-    icon_result=":cypress:"
+  "UTM")
+    icon_result=":utm:"
+    ;;
+  "MacVim" | "Vim" | "VimR")
+    icon_result=":vim:"
+    ;;
+  "Vivaldi")
+    icon_result=":vivaldi:"
+    ;;
+  "VLC")
+    icon_result=":vlc:"
+    ;;
+  "VMware Fusion")
+    icon_result=":vmware_fusion:"
     ;;
   "VSCodium")
     icon_result=":vscodium:"
     ;;
-  "Podcasts" | "播客")
-    icon_result=":podcasts:"
-    ;;
-  "DingTalk" | "钉钉" | "阿里钉")
-    icon_result=":dingtalk:"
-    ;;
-  "OBS")
-    icon_result=":obsstudio:"
-    ;;
-  "Firefox Developer Edition" | "Firefox Nightly")
-    icon_result=":firefox_developer_edition:"
-    ;;
-  "Alfred")
-    icon_result=":alfred:"
-    ;;
-  "OmniFocus")
-    icon_result=":omni_focus:"
-    ;;
-  "Skype")
-    icon_result=":skype:"
-    ;;
-  "Spark Desktop")
-    icon_result=":spark:"
-    ;;
-  "Docker" | "Docker Desktop")
-    icon_result=":docker:"
-    ;;
-  "Signal")
-    icon_result=":signal:"
-    ;;
-  "Pine")
-    icon_result=":pine:"
-    ;;
-  "Insomnia")
-    icon_result=":insomnia:"
-    ;;
-  "Microsoft Edge")
-    icon_result=":microsoft_edge:"
-    ;;
-  "Affinity Photo")
-    icon_result=":affinity_photo:"
-    ;;
-  "Sketch")
-    icon_result=":sketch:"
-    ;;
-  "Android Studio")
-    icon_result=":android_studio:"
-    ;;
-  "Bitwarden")
-    icon_result=":bit_warden:"
-    ;;
-  "Affinity Publisher")
-    icon_result=":affinity_publisher:"
-    ;;
-  "Zotero")
-    icon_result=":zotero:"
-    ;;
-  "Sublime Text")
-    icon_result=":sublime_text:"
-    ;;
   "Warp")
     icon_result=":warp:"
     ;;
-  "Messages" | "信息" | "Nachrichten")
-    icon_result=":messages:"
+  "WebStorm")
+    icon_result=":web_storm:"
     ;;
-  "Obsidian")
-    icon_result=":obsidian:"
+  "微信" | "WeChat")
+    icon_result=":wechat:"
     ;;
-  "IntelliJ IDEA")
-    icon_result=":idea:"
+  "企业微信" | "WeCom")
+    icon_result=":wecom:"
     ;;
-  "Atom")
-    icon_result=":atom:"
+  "WezTerm")
+    icon_result=":wezterm:"
     ;;
-  "FaceTime" | "FaceTime 通话")
-    icon_result=":face_time:"
+  "WhatsApp" | "‎WhatsApp")
+    icon_result=":whats_app:"
+    ;;
+  "Xcode")
+    icon_result=":xcode:"
+    ;;
+  "Yandex Music")
+    icon_result=":yandex_music:"
     ;;
   "Yuque" | "语雀")
     icon_result=":yuque:"
     ;;
-  "Grammarly Editor")
-    icon_result=":grammarly:"
+  "Zed")
+    icon_result=":zed:"
     ;;
-  "Mattermost")
-    icon_result=":mattermost:"
+  "Zen Browser")
+    icon_result=":zen_browser:"
     ;;
-  "Affinity Designer")
-    icon_result=":affinity_designer:"
+  "Zeplin")
+    icon_result=":zeplin:"
     ;;
-  "mpv")
-    icon_result=":mpv:"
+  "zoom.us")
+    icon_result=":zoom:"
     ;;
-  "Thunderbird")
-    icon_result=":thunderbird:"
+  "Zotero")
+    icon_result=":zotero:"
     ;;
-  "Airmail")
-    icon_result=":airmail:"
-    ;;
-  "Microsoft Teams")
-    icon_result=":microsoft_teams:"
-    ;;
-  "Bear")
-    icon_result=":bear:"
-    ;;
-  "System Preferences" | "System Settings" | "系统设置")
-    icon_result=":gear:"
-    ;;
-  "Nova")
-    icon_result=":nova:"
-    ;;
-  "WhatsApp")
-    icon_result=":whats_app:"
+  "Zulip")
+    icon_result=":zulip:"
     ;;
   *)
     icon_result=":default:"
     ;;
   esac
 }
-
-icon_map "$1"
-
-echo "$icon_result"
+### END-OF-ICON-MAP

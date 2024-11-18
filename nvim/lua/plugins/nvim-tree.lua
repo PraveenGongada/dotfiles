@@ -22,16 +22,19 @@ return {
 			},
 			filesystem_watchers = {
 				enable = true,
+				ignore_dirs = {
+					"node_modules",
+				},
 			},
 			view = {
 				adaptive_size = true,
-				side = "left",
+				side = "right",
 				width = 30,
 				preserve_window_proportions = true,
 			},
 			git = {
 				enable = true,
-				ignore = true,
+				ignore = false,
 			},
 			actions = {
 				open_file = {

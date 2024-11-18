@@ -10,14 +10,10 @@ jandedobbeleer/oh-my-posh/oh-my-posh
 jesseduffield/lazygit/lazygit
 jq
 neovim
+node
 ripgrep
 stow
 tlrc
 tmux
 yazi
 zoxide
-aerospace
-font-sf-pro
-raycast
-sf-symbols
-wezterm

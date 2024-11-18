@@ -25,7 +25,7 @@ local function setup()
 	--------- lazy.nvim ---------------
 	echo("  Installing lazy.nvim & plugins ...")
 	local repo = "https://github.com/folke/lazy.nvim.git"
-	shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, lazypath })
+	shell_call({ "git", "clone", "--depth=1", "--branch=stable", repo, lazypath })
 
 	--------- load plugins ---------------
 	loadPlugins()

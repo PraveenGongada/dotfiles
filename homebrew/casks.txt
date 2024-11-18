@@ -1,0 +1,5 @@
+wezterm
+sf-symbols
+raycast
+font-sf-pro
+aerospace

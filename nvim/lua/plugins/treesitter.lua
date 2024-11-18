@@ -3,7 +3,11 @@ return {
 	event = { "BufReadPost", "BufNewFile", "VeryLazy" },
 	cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 	build = ":TSUpdate",
+	dependencies = {
+		{ "windwp/nvim-ts-autotag" },
+	},
 	config = function()
+		require("nvim-ts-autotag").setup({})
 		local treesitter = require("nvim-treesitter.configs")
 
 		treesitter.setup({
@@ -39,10 +43,6 @@ return {
 				end
 			end,
 
-			autotag = {
-				enable = true,
-				disable = {},
-			},
 			indent = {
 				enable = true,
 				disable = {},

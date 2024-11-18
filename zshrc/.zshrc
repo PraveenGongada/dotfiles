@@ -90,11 +90,14 @@ alias cd="z"
 alias ..="cd .."
 alias ...="cd ../.."
 
-## Eza
+# Eza
 alias l="eza -l --icons --git"
 alias ls="eza --icons=always"
 alias lt="eza --tree --level=2 --icons"
 alias ltree="eza --tree --level=2 --long --icons"
+
+# Nvim
+alias n="nvim"
 
 # Exported Paths
 export ZSH="$HOME/.config/zshrc"

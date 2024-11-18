@@ -15,7 +15,7 @@ M.base46 = {
 	integrations = {},
 	theme_toggle = { "ayu_dark", "onedark" },
 	theme = "ayu_dark", -- default themes
-	transparency = true,
+	transparency = false,
 }
 
 ------------------------------- nvchad_ui modules -----------------------------
@@ -46,7 +46,7 @@ M.ui = {
 	tabufline = {
 		enabled = true,
 		lazyload = true,
-		order = { "treeOffset", "buffers", "tabs", "btns" },
+		order = { "buffers", "tabs", "btns", "treeOffset" },
 		modules = nil,
 	},
 }

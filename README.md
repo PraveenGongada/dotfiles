@@ -52,12 +52,14 @@ echo 'export ZDOTDIR="$HOME/.config/zshrc"' >> ~/.zshenv
 
 ```bash
 # Backing up data
-{ brew leaves -r; brew list --cask; } > ~/.config/homebrew/leaves.txt
+brew leaves -r > ~/.config/homebrew/leaves.txt
+brew list --cask -r > ~/.config/homebrew/casks.txt
 ```
 
 ```bash
 # Installing from backup
 xargs brew install < ~/.config/homebrew/leaves.txt
+xargs brew install --cask < ~/.config/homebrew/casks.txt
 ```
 
 ### Insalling Custom Fonts

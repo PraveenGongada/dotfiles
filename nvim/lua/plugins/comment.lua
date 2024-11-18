@@ -1,8 +1,13 @@
 return {
 	"numToStr/Comment.nvim",
 	event = { "BufReadPost", "BufNewFile" },
+	dependencies = {
+		"JoosepAlviste/nvim-ts-context-commentstring",
+	},
 	config = function()
-		require("Comment").setup({})
+		require("Comment").setup({
+			pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+		})
 
 		-- Mappings
 		local keymap = vim.keymap -- for conciseness
@@ -16,7 +21,7 @@ return {
 		keymap.set(
 			"v",
 			"<leader>/",
-			"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+			"<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>",
 			{ desc = "Toggle comment" }
 		)
 	end,
