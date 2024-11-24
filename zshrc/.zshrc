@@ -99,6 +99,17 @@ alias ltree="eza --tree --level=2 --long --icons"
 # Nvim
 alias n="nvim"
 
+# Pomodoro
+function work () {
+  timer 25m
+  osascript -e 'display notification "Pomodoro" with title "Work Timer is up! Take a Break 😊" sound name "Crystal"'
+}
+
+function rest () {
+  timer 5m
+  osascript -e 'display notification "Pomodoro" with title "Break is over! Get back to work 😬" sound name "Crystal"'
+}
+
 # Exported Paths
 export ZSH="$HOME/.config/zshrc"
 export PATH="$PATH:/Users/praveenkumar/FlutterDev/flutter/bin"

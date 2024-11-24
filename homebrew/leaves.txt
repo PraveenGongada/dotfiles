@@ -1,3 +1,4 @@
+caarlos0/tap/timer
 cloudflared
 eza
 fastfetch

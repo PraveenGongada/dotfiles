@@ -11,16 +11,18 @@ blocks:
         style: plain
         template: "{{ .Path }}"
         properties:
-          style: full
+          style: folder
         background: transparent
         foreground: blue
       - type: git
         style: plain
-        template: " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
+        template: " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}"
         properties:
           branch_icon: ""
-          commit_icon: "@"
-          fetch_status: true
+          fetch_status: false
+          fetch_upstream_icon: false
+          fetch_stash_count: false
+          status_colors: false
         background: transparent
         foreground: p:grey
     newline: true
@@ -30,7 +32,7 @@ blocks:
         style: plain
         template: "{{ .FormattedMs }}"
         properties:
-          threshold: 5000
+          threshold: 10000
         background: transparent
         foreground: yellow
     overflow: hidden
@@ -45,12 +47,14 @@ blocks:
         template: ❯
         background: transparent
     newline: true
+
 transient_prompt:
   foreground_templates:
     - "{{if gt .Code 0}}red{{end}}"
     - "{{if eq .Code 0}}magenta{{end}}"
   template: "❯ "
   background: transparent
+
 secondary_prompt:
   template: "❯❯ "
   background: transparent

@@ -15,7 +15,7 @@ M.base46 = {
 	integrations = {},
 	theme_toggle = { "ayu_dark", "onedark" },
 	theme = "ayu_dark", -- default themes
-	transparency = false,
+	transparency = true,
 }
 
 ------------------------------- nvchad_ui modules -----------------------------
