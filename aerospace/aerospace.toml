@@ -118,6 +118,8 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+alt-i = 'workspace I'
+alt-s = 'workspace S'
 alt-b = 'workspace B'
 alt-t = 'workspace T'
 alt-v = 'workspace V'
@@ -132,6 +134,8 @@ alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-i = 'move-node-to-workspace I'
+alt-shift-s = 'move-node-to-workspace S'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-v = 'move-node-to-workspace V'
@@ -192,6 +196,26 @@ run = "move-node-to-workspace B"
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace V"
+
+[[on-window-detected]]
+if.app-id = 'com.google.android.studio'
+run = "move-node-to-workspace I"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+run = "move-node-to-workspace I"
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = "move-node-to-workspace S"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iphonesimulator'
+run = "move-node-to-workspace T"
+
+[[on-window-detected]]
+if.app-id = 'NULL-APP-BUNDLE-ID'
+run = "move-node-to-workspace T"
 
 # Floating apps
 [[on-window-detected]]

@@ -81,11 +81,11 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<Space>", "<Nop>", { desc = "Disable space key's default behaviour", silent = true })
 
 -- Telescope
-keymap.set("n", "ff", "<cmd> Telescope find_files previewer=false <CR>", { desc = "Find files" }) -- Add this to enable preview -> previewer=true
+keymap.set("n", "ff", "<cmd> Telescope find_files previewer=true <CR>", { desc = "Find files" }) -- Add this to enable preview -> previewer=true
 keymap.set(
 	"n",
 	"fa",
-	"<cmd> Telescope find_files follow=true no_ignore=true hidden=true previewer=false <CR>",
+	"<cmd> Telescope find_files follow=true no_ignore=true hidden=true previewer=true <CR>",
 	{ desc = "Find all" }
 )
 keymap.set("n", "fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })

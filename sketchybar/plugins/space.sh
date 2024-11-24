@@ -54,21 +54,23 @@ elif [[ "$SENDER" = "aerospace_workspace_change" ]]; then
 
       sketchybar --set space.$sid display=$m
 
-      update_icons "$m" "$sid"
-
       sketchybar --set space.$PREV_WORKSPACE background.drawing=off \
         label.color=$ACCENT_COLOR \
         icon.color=$ACCENT_COLOR
 
       if [ "$sid" = "$FOCUSED_WORKSPACE" ]; then 
-        sketchybar --animate sin 10 --set space.$FOCUSED_WORKSPACE background.drawing=on \
+        sketchybar --set space.$FOCUSED_WORKSPACE background.drawing=on \
         background.color=$ACCENT_COLOR \
         label.color=$BAR_COLOR \
         icon.color=$BAR_COLOR
       fi
 
-      # can be done only when there are no apps
-      update_icons "$m" "$PREV_WORKSPACE"
+      apps=$(aerospace list-windows --monitor "$m" --workspace "$sid" \
+            | awk -F '|' '{gsub(/^ *| *$/, "", $2); print $2}')
+
+      if [ "${apps}" == "" ]; then
+        update_icons "$m" "$PREV_WORKSPACE"
+      fi
 
     done
   done
