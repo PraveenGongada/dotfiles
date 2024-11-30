@@ -9,7 +9,6 @@ git
 glow
 jandedobbeleer/oh-my-posh/oh-my-posh
 jesseduffield/lazygit/lazygit
-jq
 neovim
 node
 ripgrep

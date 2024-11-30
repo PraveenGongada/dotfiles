@@ -10,7 +10,7 @@ brew install felixkratz/formulae/sketchybar
 
 ## Install command line JSON processor (jq)
 
-Run the following command to install jq
+Run the following command to install jq (Needed only if media.sh is enabled)
 
 ```
 brew install jq
@@ -24,7 +24,7 @@ Install the SF Pro font which is the font for MacOs
 brew install font-sf-pro
 ```
 
-Install SF Symbols which is an icons/symbols library made for SF Pro
+Install SF Symbols which is an icons/symbols library made for SF Pro (Optional if needed new icons)
 
 ```
 brew install --cask sf-symbols

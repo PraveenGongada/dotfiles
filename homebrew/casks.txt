@@ -1,5 +1,5 @@
 wezterm
-sf-symbols
 raycast
+kitty
 font-sf-pro
 aerospace
