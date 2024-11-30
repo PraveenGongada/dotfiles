@@ -38,8 +38,17 @@ Run the following command to install the sketchybar-app-font
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 ```
 
-Run the following command to add icon_map.sh to ~/.config/sketchybar/plugins
+Run the following command to add icon_map.sh file to ~/.config/sketchybar/plugins
 
 ```
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/icon_map.sh -o ~/.config/sketchybar/plugins/icon_map.sh
+```
+
+Open icon_map.sh file and add the following to the end of the file
+
+```
+__icon_map "$1"
+
+echo "$icon_result"
+
 ```

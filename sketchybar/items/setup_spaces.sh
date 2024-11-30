@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
-
 sketchybar --add event aerospace_workspace_change
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
@@ -43,7 +41,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
   for focus in $(aerospace list-workspaces --focused); do
     sketchybar --set space.$focus background.drawing=on \
       background.color=$ACCENT_COLOR \
-      label.color=$BAR_COLOR \
-      icon.color=$BAR_COLOR
+      label.color=$ITEM_COLOR \
+      icon.color=$ITEM_COLOR
   done
 done
