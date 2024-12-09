@@ -26,16 +26,6 @@ blocks:
         background: transparent
         foreground: p:grey
     newline: true
-  - type: rprompt
-    segments:
-      - type: executiontime
-        style: plain
-        template: "{{ .FormattedMs }}"
-        properties:
-          threshold: 10000
-        background: transparent
-        foreground: yellow
-    overflow: hidden
   - type: prompt
     alignment: left
     segments:
