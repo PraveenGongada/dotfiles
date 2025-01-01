@@ -119,6 +119,8 @@ export PATH="$PATH:/Users/praveenkumar/istio-1.22.3/bin"
 export CONFIG_DIR="$HOME/.config/lazygit"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.local/share/zinit/plugins/JanDeDobbeleer/oh-my-posh:$PATH"
+export EDITOR="nvim"
+export XDG_CONFIG_HOME=$HOME/.config
 
 # Shell integrations
 eval "$(fzf --zsh)"

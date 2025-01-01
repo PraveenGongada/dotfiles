@@ -88,12 +88,12 @@ keymap.set(
 	"<cmd> Telescope find_files follow=true no_ignore=true hidden=true previewer=true <CR>",
 	{ desc = "Find all" }
 )
-keymap.set("n", "fs", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+keymap.set("n", "fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
 keymap.set("n", "fm", "<cmd> Telescope resume <CR>", { desc = "Resume Search" })
 keymap.set("n", "fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>", { desc = "Help page" })
 keymap.set("n", "<leader>fo", "<cmd> Telescope oldfiles <CR>", { desc = "Find oldfiles" })
-keymap.set("n", "fw", "<cmd> Telescope current_buffer_fuzzy_find <CR>", { desc = "Find in current buffer" })
+keymap.set("n", "fs", "<cmd> Telescope current_buffer_fuzzy_find <CR>", { desc = "Find in current buffer" })
 keymap.set("n", "fp", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 

@@ -30,6 +30,10 @@ return {
 					"%.jpg",
 					"%.jpeg",
 					"%.DS_Store",
+					"%.res",
+					"%.mp3",
+					"%.ttf",
+					"%.otf",
 				},
 				vimgrep_arguments = {
 					"rg",

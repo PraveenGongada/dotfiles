@@ -17,7 +17,7 @@ config = {
 	native_macos_fullscreen_mode = true,
 	adjust_window_size_when_changing_font_size = false,
 	font = wezterm.font_with_fallback({
-		{ family = "Maple Mono NF", harfbuzz_features = { "ss02", "cv03" } },
+		{ family = "Maple Mono NF", harfbuzz_features = { "ss01", "cv03" } },
 		{ family = "JetBrainsMono Nerd Font" },
 	}),
 	font_size = 12,

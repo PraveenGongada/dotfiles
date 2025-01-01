@@ -1,11 +1,11 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
-	enabled = false,
+	enabled = true,
 	opts = {
 		provider = "copilot",
 		copilot = {
-			model = "gpt-4o",
+			model = "claude-3.5-sonnet",
 			max_tokens = 4096,
 		},
 	},

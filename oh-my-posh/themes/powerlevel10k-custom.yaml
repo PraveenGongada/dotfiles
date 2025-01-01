@@ -1,51 +1,53 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-version: 2
-final_space: true
-console_title_template: "{{ .Shell }} in {{ .Folder }}"
-blocks:
-  - type: prompt
-    alignment: left
-    segments:
-      - type: path
-        style: plain
-        template: "{{ .Path }}"
-        properties:
-          style: folder
-        background: transparent
-        foreground: blue
-      - type: git
-        style: plain
-        template: " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}"
-        properties:
-          branch_icon: ""
-          fetch_status: false
-          fetch_upstream_icon: false
-          fetch_stash_count: false
-          status_colors: false
-        background: transparent
-        foreground: p:grey
-    newline: true
-  - type: prompt
-    alignment: left
-    segments:
-      - type: text
-        style: plain
-        foreground_templates:
-          - "{{if gt .Code 0}}red{{end}}"
-          - "{{if eq .Code 0}}magenta{{end}}"
-        template: ❯
-        background: transparent
-    newline: true
-
-transient_prompt:
-  foreground_templates:
-    - "{{if gt .Code 0}}red{{end}}"
-    - "{{if eq .Code 0}}magenta{{end}}"
-  template: "❯ "
-  background: transparent
-
 secondary_prompt:
   template: "❯❯ "
-  background: transparent
   foreground: magenta
+  background: transparent
+transient_prompt:
+  template: "❯ "
+  background: transparent
+  foreground_templates:
+  - "{{if gt .Code 0}}red{{end}}"
+  - "{{if eq .Code 0}}magenta{{end}}"
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+      style: folder
+    template: "{{ .Path }}"
+    foreground: blue
+    background: transparent
+    type: path
+    style: plain
+  - properties:
+      branch_icon: ""
+      cache_duration: none
+      fetch_stash_count: false
+      fetch_status: false
+      fetch_upstream_icon: false
+      status_colors: false
+    template: " {{ .HEAD }} "
+    foreground: p:grey
+    background: transparent
+    type: git
+    style: plain
+  newline: true
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    template: ❯
+    background: transparent
+    type: text
+    style: plain
+    foreground_templates:
+    - "{{if gt .Code 0}}red{{end}}"
+    - "{{if eq .Code 0}}magenta{{end}}"
+  newline: true
+version: 3
+final_space: true

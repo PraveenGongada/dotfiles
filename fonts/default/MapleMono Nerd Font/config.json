@@ -1,6 +1,8 @@
 {
+    "version": "v7.0-beta33",
     "family_name": "Maple Mono",
     "use_hinted": true,
+    "ligature": true,
     "feature_freeze": {
         "cv01": "ignore",
         "cv02": "ignore",
@@ -26,21 +28,21 @@
     },
     "nerd_font": {
         "enable": true,
-        "version": "3.2.1",
+        "version": "3.3.0",
         "mono": false,
         "use_font_patcher": false,
         "glyphs": [
             "--complete"
         ],
-        "extra_args": [],
-        "github_mirror": "github.com"
+        "extra_args": []
     },
     "cn": {
         "enable": true,
-        "with_nerd_font": true,
+        "with_nerd_font": false,
         "fix_meta_table": true,
         "clean_cache": false,
         "narrow": false,
-        "use_hinted": false
+        "use_hinted": false,
+        "use_static_base_font": true
     }
 }
