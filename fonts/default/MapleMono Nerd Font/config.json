@@ -1,7 +1,7 @@
 {
     "version": "v7.0-beta33",
     "family_name": "Maple Mono",
-    "use_hinted": true,
+    "use_hinted": false,
     "ligature": true,
     "feature_freeze": {
         "cv01": "ignore",
