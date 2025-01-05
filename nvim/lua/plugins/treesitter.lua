@@ -23,8 +23,6 @@ return {
 				"lua",
 				"vim",
 				"vimdoc",
-				"purescript",
-				"rescript",
 				"bash",
 			},
 			highlight = {

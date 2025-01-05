@@ -110,25 +110,7 @@ return {
 			capabilities = capabilities,
 		})
 
-		-- rescript
-		lspconfig.rescriptls.setup({
-			on_init = on_init,
-			on_attach = on_attach,
-			capabilities = capabilities,
-			cmd = { "rescript-language-server", "--stdio" },
-			filetypes = { "rescript" },
-			init_options = {
-				extenstionConfiguration = {
-					askToStartBuild = false,
-					inlayHints = {
-						enable = true,
-					},
-				},
-			},
-		})
-
 		-- Mappings
-
 		local keymap = vim.keymap
 
 		keymap.set("n", "gD", function()

@@ -49,5 +49,3 @@ else
 	loadPlugins()
 	loadBase46Cache()
 end
-
-vim.filetype.add({ extension = { purs = "purescript" } })

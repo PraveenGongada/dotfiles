@@ -57,7 +57,6 @@ return {
 				"tailwindcss-language-server",
 				"css-lsp",
 				"lua-language-server",
-				"rescript-language-server",
 
 				-- Formatters
 				"prettierd",
