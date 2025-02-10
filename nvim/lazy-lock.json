@@ -5,7 +5,7 @@
   "alpha-nvim": { "branch": "main", "commit": "bf3c8bb8c02ed3d9644cc5bbc48e2bdc39349cd7" },
   "avante.nvim": { "branch": "main", "commit": "9e0b5bf8f13fa7f260932d350685bc379dc4098c" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
-  "base46": { "branch": "custom", "commit": "e98636fc3b0234e3af80ac1ecc98a48639162da0" },
+  "base46": { "branch": "custom", "commit": "ad773d143de62e58928b7ec4a8c7f22ea459f3b9" },
   "catppuccin": { "branch": "main", "commit": "7be452ee067978cdc8b2c5f3411f0c71ffa612b9" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },

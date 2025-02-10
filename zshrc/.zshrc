@@ -99,6 +99,9 @@ alias ltree="eza --tree --level=2 --long --icons"
 # Nvim
 alias n="nvim"
 
+#Lazygit 
+alias lg="lazygit"
+
 # Pomodoro
 function work () {
   timer 25m

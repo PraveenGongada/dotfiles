@@ -28,8 +28,8 @@ config = {
 		top = 0,
 		bottom = 0,
 	},
-	window_background_opacity = 0.6,
-	macos_window_background_blur = 25,
+	-- window_background_opacity = 0.6,
+	-- macos_window_background_blur = 25,
 	mouse_bindings = {
 		-- Command + Click to open links
 		{
@@ -40,7 +40,7 @@ config = {
 	},
 	colors = {
 		foreground = "#ffffff", -- Text color
-		background = "#000000", -- Background color
+		background = "#080c11", -- Background color
 
 		cursor_bg = "#ffffff", -- Cursor color
 		cursor_border = "#ffffff", -- Cursor border color
