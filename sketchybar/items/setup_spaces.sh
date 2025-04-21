@@ -16,7 +16,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       label.padding_right=10 \
       label.y_offset=-1 \
       click_script="$PLUGIN_DIR/space_click.sh $sid" \
-      script="$PLUGIN_DIR/space.sh $sid" \
+      script="$PLUGIN_DIR/spaces.sh $sid" \
       --subscribe space.$sid aerospace_workspace_change front_app_switched
 
     apps=$(aerospace list-windows --monitor "$m" --workspace "$sid" |

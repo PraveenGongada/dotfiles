@@ -1,10 +1,35 @@
 #!/usr/bin/env bash
 
+# Create a cache directory if it doesn't exist
+CACHE_DIR="$HOME/.cache/sketchybar"
+mkdir -p "$CACHE_DIR"
+
+# Cache file for icon mappings
+ICON_CACHE="$CACHE_DIR/icon_cache.txt"
+
+# Create the cache file if it doesn't exist
+if [ ! -f "$ICON_CACHE" ]; then
+  touch "$ICON_CACHE"
+fi
+
+# Check if the app is already in cache
+APP_NAME="$1"
+CACHED_ICON=$(grep "^$APP_NAME|" "$ICON_CACHE" | cut -d '|' -f2)
+
+if [ -n "$CACHED_ICON" ]; then
+  # Cache hit, return the icon
+  echo "$CACHED_ICON"
+  exit 0
+fi
+
 ### START-OF-ICON-MAP
 function __icon_map() {
   case "$1" in
   "Live")
     icon_result=":ableton:"
+    ;;
+  "Activity Monitor")
+    icon_result=":activity_monitor:"
     ;;
   "Adobe Bridge"*)
     icon_result=":adobe_bridge:"
@@ -105,8 +130,11 @@ function __icon_map() {
   "Calculator" | "Calculette")
     icon_result=":calculator:"
     ;;
-  "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie" | "Calendrier" | "Notion Calendar")
+  "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie" | "Calendrier" | "カレンダー" | "Notion Calendar")
     icon_result=":calendar:"
+    ;;
+  "calibre")
+    icon_result=":calibre:"
     ;;
   "Caprine")
     icon_result=":caprine:"
@@ -155,6 +183,9 @@ function __icon_map() {
     ;;
   "DaVinci Resolve")
     icon_result=":davinciresolve:"
+    ;;
+  "DBeaver")
+    icon_result=":dbeaver:"
     ;;
   "Deezer")
     icon_result=":deezer:"
@@ -225,14 +256,20 @@ function __icon_map() {
   "Fork")
     icon_result=":fork:"
     ;;
+  "Freeform")
+    icon_result=":freeform:"
+    ;;
   "FreeTube")
     icon_result=":freetube:"
     ;;
   "Fusion")
     icon_result=":fusion:"
     ;;
-  "System Preferences" | "System Settings" | "系统设置" | "Réglages Système")
+  "System Preferences" | "System Settings" | "系统设置" | "Réglages Système" | "システム設定")
     icon_result=":gear:"
+    ;;
+  "Ghostty")
+    icon_result=":ghostty:"
     ;;
   "GitHub Desktop")
     icon_result=":git_hub:"
@@ -267,6 +304,9 @@ function __icon_map() {
   "Adobe InDesign"* | "InDesign")
     icon_result=":indesign:"
     ;;
+  "Infuse")
+    icon_result=":infuse:"
+    ;;
   "Inkdrop")
     icon_result=":inkdrop:"
     ;;
@@ -275,6 +315,9 @@ function __icon_map() {
     ;;
   "Insomnia")
     icon_result=":insomnia:"
+    ;;
+  "iPhone Mirroring")
+    icon_result=":iphone_mirroring:"
     ;;
   "Iris")
     icon_result=":iris:"
@@ -306,6 +349,12 @@ function __icon_map() {
   "kitty")
     icon_result=":kitty:"
     ;;
+  "Kodi")
+    icon_result=":kodi:"
+    ;;
+  "LanguageTool for Desktop")
+    icon_result=":languagetool_for_desktop:"
+    ;;
   "League of Legends")
     icon_result=":league_of_legends:"
     ;;
@@ -336,13 +385,13 @@ function __icon_map() {
   "Logseq")
     icon_result=":logseq:"
     ;;
-  "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "Superhuman" | "Spark" | "邮件")
+  "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "Superhuman" | "Spark" | "邮件" | "メール")
     icon_result=":mail:"
     ;;
   "MAMP" | "MAMP PRO")
     icon_result=":mamp:"
     ;;
-  "Maps" | "Google Maps")
+  "Maps" | "Google Maps" | "マップ")
     icon_result=":maps:"
     ;;
   "Marta")
@@ -354,7 +403,7 @@ function __icon_map() {
   "Mattermost")
     icon_result=":mattermost:"
     ;;
-  "Messages" | "信息" | "Nachrichten")
+  "Messages" | "信息" | "Nachrichten" | "メッセージ")
     icon_result=":messages:"
     ;;
   "Messenger")
@@ -390,13 +439,16 @@ function __icon_map() {
   "MongoDB Compass"*)
     icon_result=":mongodb:"
     ;;
+  "Moonlight")
+    icon_result=":moonlight:"
+    ;;
   "mpv")
     icon_result=":mpv:"
     ;;
   "Mullvad Browser")
     icon_result=":mullvad_browser:"
     ;;
-  "Music" | "音乐" | "Musique")
+  "Music" | "音乐" | "Musique" | "ミュージック")
     icon_result=":music:"
     ;;
   "Neovide" | "neovide")
@@ -417,7 +469,7 @@ function __icon_map() {
   "Notability")
     icon_result=":notability:"
     ;;
-  "Notes" | "备忘录")
+  "Notes" | "备忘录" | "メモ")
     icon_result=":notes:"
     ;;
   "Notion")
@@ -447,6 +499,9 @@ function __icon_map() {
   "ChatGPT")
     icon_result=":openai:"
     ;;
+  "OpenAI Translator")
+    icon_result=":openai_translator:"
+    ;;
   "OpenVPN Connect")
     icon_result=":openvpn_connect:"
     ;;
@@ -471,7 +526,10 @@ function __icon_map() {
   "Parsec")
     icon_result=":parsec:"
     ;;
-  "Preview" | "预览" | "Skim" | "zathura" | "Aperçu")
+  "Passwords")
+    icon_result=":passwords:"
+    ;;
+  "Preview" | "预览" | "Skim" | "zathura" | "Aperçu" | "プレビュー")
     icon_result=":pdf:"
     ;;
   "PDF Expert")
@@ -482,6 +540,9 @@ function __icon_map() {
     ;;
   "Phoenix Slides")
     icon_result=":phoenix_slides:"
+    ;;
+  "Photos")
+    icon_result=":photos:"
     ;;
   "Adobe Photoshop"*)
     icon_result=":photoshop:"
@@ -513,6 +574,9 @@ function __icon_map() {
   "Proton Mail" | "Proton Mail Bridge")
     icon_result=":proton_mail:"
     ;;
+  "Proton VPN" | "ProtonVPN")
+    icon_result=":proton_vpn:"
+    ;;
   "PrusaSlicer" | "SuperSlicer")
     icon_result=":prusaslicer:"
     ;;
@@ -537,11 +601,14 @@ function __icon_map() {
   "Reeder")
     icon_result=":reeder5:"
     ;;
-  "Reminders" | "提醒事项" | "Rappels")
+  "Reminders" | "提醒事项" | "Rappels" | "リマインダー")
     icon_result=":reminders:"
     ;;
   "Replit")
     icon_result=":replit:"
+    ;;
+  "Repo Prompt")
+    icon_result=":repo_prompt:"
     ;;
   "Rider" | "JetBrains Rider")
     icon_result=":rider:"
@@ -552,6 +619,9 @@ function __icon_map() {
   "Royal TSX")
     icon_result=":royaltsx:"
     ;;
+  "RustDesk")
+    icon_result=":rustdesk:"
+    ;;
   "Safari" | "Safari浏览器" | "Safari Technology Preview")
     icon_result=":safari:"
     ;;
@@ -560,6 +630,9 @@ function __icon_map() {
     ;;
   "Sequel Pro")
     icon_result=":sequel_pro:"
+    ;;
+  "Session")
+    icon_result=":session:"
     ;;
   "Setapp")
     icon_result=":setapp:"
@@ -591,11 +664,23 @@ function __icon_map() {
   "Spotlight")
     icon_result=":spotlight:"
     ;;
+  "Studio 3T")
+    icon_result=":studio_3t:"
+    ;;
   "Sublime Text")
     icon_result=":sublime_text:"
     ;;
   "superProductivity")
     icon_result=":superproductivity:"
+    ;;
+  "Surfshark")
+    icon_result=":surfshark:"
+    ;;
+  "Tabby")
+    icon_result=":tabby:"
+    ;;
+  "TablePlus")
+    icon_result=":tableplus:"
     ;;
   "Tana")
     icon_result=":tana:"
@@ -606,11 +691,14 @@ function __icon_map() {
   "Telegram")
     icon_result=":telegram:"
     ;;
-  "Terminal" | "终端")
+  "Terminal" | "终端" | "ターミナル")
     icon_result=":terminal:"
     ;;
   "Typora")
     icon_result=":text:"
+    ;;
+  "TextEdit")
+    icon_result=":textedit:"
     ;;
   "Microsoft To Do" | "Things")
     icon_result=":things:"
@@ -669,6 +757,9 @@ function __icon_map() {
   "Warp")
     icon_result=":warp:"
     ;;
+  "Weather")
+    icon_result=":weather:"
+    ;;
   "WebStorm")
     icon_result=":web_storm:"
     ;;
@@ -686,6 +777,9 @@ function __icon_map() {
     ;;
   "Xcode")
     icon_result=":xcode:"
+    ;;
+  "Yandex Browser" | "Yandex Browser" | "Yandex")
+    icon_result=":yandex_bower:"
     ;;
   "Yandex Music")
     icon_result=":yandex_music:"
@@ -718,6 +812,10 @@ function __icon_map() {
 }
 ### END-OF-ICON-MAP
 
-__icon_map "$1"
+__icon_map "$APP_NAME"
+
+if [ -n "$icon_result" ]; then
+  echo "$APP_NAME|$icon_result" >>"$ICON_CACHE"
+fi
 
 echo "$icon_result"

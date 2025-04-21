@@ -24,6 +24,7 @@ return {
 				"vim",
 				"vimdoc",
 				"bash",
+				"java"
 			},
 			highlight = {
 				enable = true,

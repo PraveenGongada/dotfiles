@@ -125,7 +125,7 @@ return {
 		keymap.set("n", "gi", function()
 			vim.lsp.buf.implementation()
 		end, { desc = "LSP implementation" })
-		keymap.set("n", "<leader>ls", function()
+		keymap.set("n", "<leader>lh", function()
 			vim.lsp.buf.signature_help()
 		end, { desc = "LSP signature help" })
 		keymap.set("n", "<leader>D", function()

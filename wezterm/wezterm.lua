@@ -81,7 +81,7 @@ return config
 -- background = {
 -- 	{
 -- 		source = {
--- 			File = "/Users/" .. os.getenv("USER") .. "/.config/wallpapers/bg-blurred.png",
+-- 			File = "/Users/" .. os.getenv("USER") .. "/.config/wallpapers/purple-background.png",
 -- 		},
 -- 		hsb = {
 -- 			saturation = 1.2,
