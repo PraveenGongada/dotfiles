@@ -2,6 +2,11 @@
 
 sketchybar --add event aerospace_workspace_change
 
+sketchybar --add item aerospace_dummy left \
+  --set aerospace_dummy display=0 \
+  script="$PLUGIN_DIR/spaces.sh" \
+  --subscribe aerospace_dummy aerospace_workspace_change
+
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for sid in $(aerospace list-workspaces --monitor $m); do
     sketchybar --add space space.$sid left \
@@ -15,9 +20,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       icon.font="SF Pro:Semibold:12.0" \
       label.padding_right=10 \
       label.y_offset=-1 \
-      click_script="$PLUGIN_DIR/space_click.sh $sid" \
-      script="$PLUGIN_DIR/spaces.sh $sid" \
-      --subscribe space.$sid aerospace_workspace_change front_app_switched
+      click_script="$PLUGIN_DIR/space_click.sh $sid"
 
     apps=$(aerospace list-windows --monitor "$m" --workspace "$sid" |
       awk -F '|' '{gsub(/^ *| *$/, "", $2); if (!seen[$2]++) print $2}')
@@ -34,7 +37,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     sketchybar --set space.$sid label="$icon_strip"
 
   done
-  # It is to hide the empty spaces
+  
   for empty_space in $(aerospace list-workspaces --monitor $m --empty); do
     sketchybar --set space.$empty_space display=0
   done

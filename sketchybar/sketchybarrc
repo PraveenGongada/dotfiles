@@ -18,10 +18,10 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar height=34 \
-  blur_radius=15 \
+sketchybar --bar height=36 \
+  blur_radius=30 \
   position=top \
-  sticky=off \
+  sticky=on \
   padding_left=10 \
   padding_right=10
 
@@ -45,8 +45,7 @@ sketchybar --default icon.font="SF Pro:Semibold:12.0" \
   label.padding_right=6
 
 # -- Left Side Items --
-source $ITEM_DIR/setup_spaces.sh
-source $PLUGIN_DIR/spaces.sh
+source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/front_app.sh
 
 # -- Right Side Of Notch Items --

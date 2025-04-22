@@ -21,7 +21,6 @@ update_workspace_appearance() {
 update_icons() {
   m=$1
   sid=$2
-  animate=$3
 
   apps=$(aerospace list-windows --monitor "$m" --workspace "$sid" \
   | awk -F '|' '{gsub(/^ *| *$/, "", $2); if (!seen[$2]++) print $2}' \
@@ -36,54 +35,23 @@ update_icons() {
     icon_strip=" —"
   fi
 
-  if [ "$animate" = "true" ]; then
-    sketchybar --animate sin 10 --set space.$sid label="$icon_strip"
-  else
-    sketchybar --set space.$sid label="$icon_strip"
-  fi
+  sketchybar --animate sin 10 --set space.$sid label="$icon_strip"
 }
 
-app_switched() {
-  for m in $(aerospace list-monitors | awk '{print $1}'); do
-    for sid in $(aerospace list-workspaces --monitor $m --visible); do
-      
-      apps=$( (echo "$INFO"; aerospace list-windows --monitor "$m" --workspace "$sid" \
-      | awk -F '|' '{gsub(/^ *| *$/, "", $2); print $2}') \
-      | awk '!seen[$0]++' | sort)
+update_workspace_appearance "$PREV_WORKSPACE" "false"
+update_workspace_appearance "$FOCUSED_WORKSPACE" "true"
 
-      icon_strip=""
-      if [ "${apps}" != "" ]; then
-        while read -r app; do
-          icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
-        done <<<"${apps}"
-      else
-        icon_strip=" —"
-      fi
+for m in $(aerospace list-monitors | awk '{print $1}'); do
+  for sid in $(aerospace list-workspaces --monitor $m --visible); do
+    sketchybar --set space.$sid display=$m
 
-      sketchybar --set space.$sid label="$icon_strip"
-    done
+    update_icons "$m" "$sid"
+    
+    update_icons "$m" "$PREV_WORKSPACE"
+    
+    apps=$(aerospace list-windows --monitor "$m" --workspace "$sid" | wc -l)
+    if [ "${apps}" -eq 0 ]; then
+      sketchybar --set space.$sid display=0
+    fi
   done
-}
-
-if [ "$SENDER" = "front_app_switched" ]; then
-  app_switched
-
-elif [[ "$SENDER" = "aerospace_workspace_change" ]]; then
-  update_workspace_appearance "$PREV_WORKSPACE" "false"
-  update_workspace_appearance "$FOCUSED_WORKSPACE" "true"
-
-  for m in $(aerospace list-monitors | awk '{print $1}'); do
-    for sid in $(aerospace list-workspaces --monitor $m --visible); do
-      sketchybar --set space.$sid display=$m
-
-      update_icons "$m" "$sid" "true"
-      
-      update_icons "$m" "$PREV_WORKSPACE" "false"
-      
-      apps=$(aerospace list-windows --monitor "$m" --workspace "$sid" | wc -l)
-      if [ "${apps}" -eq 0 ]; then
-        sketchybar --set space.$sid display=0
-      fi
-    done
-  done
-fi
+done
