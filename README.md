@@ -1,85 +1,123 @@
-# My dotfiles
+<div align="center">
 
-This repository contains the dotfiles for my system
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:02569B,100:005078&height=200&section=header&text=~/dotfiles&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Dotfiles Banner"/>
 
-## Requirements
+<br/>
+<img src="https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logoColor=black" alt="Platform: macOS"/>
+<img src="https://img.shields.io/github/stars/PraveenGongada/dotfiles?style=for-the-badge" alt="Stars"/>
+<img src="https://img.shields.io/github/forks/PraveenGongada/dotfiles?style=for-the-badge" alt="Forks"/>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-02569B?style=for-the-badge" alt="License: MIT"/></a>
 
-Ensure you have the following installed on your system
+_A carefully curated collection of configuration files for a productive development environment_
 
-### Git
+</div>
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="./docs/images/nvim.png" alt="Terminal Setup"/>
+  <img src="./docs/images/desktop.png" alt="Desktop Environment"/>
+</div>
+
+_For more screenshots, see [Showcase](docs/showcase.md)_
+
+## 📦 What's Inside
+
+This repository contains configuration files for various tools and applications:
+
+- **[zshrc](zshrc/)** - Z Shell configuration
+- **[nvim](nvim/)** - Neovim configuration
+- **[tmux](tmux/)** - Terminal multiplexer configuration
+- **[kitty](kitty/)** - GPU-based terminal emulator
+- **[wezterm](wezterm/)** - GPU-accelerated cross-platform terminal emulator
+- **[lazygit](lazygit/)** - Terminal UI for git commands
+- **[sketchybar](sketchybar/)** - macOS status bar replacement
+- **[aerospace](aerospace/)** - Window manager for macOS
+- **[yazi](yazi/)** - Terminal file manager
+- **[oh-my-posh](oh-my-posh/)** - Prompt theme engine
+- **[homebrew](homebrew/)** - Package manager backup
+- **[fonts](fonts/)** - Custom fonts collection
+- **[wallpapers](wallpapers/)** - Custom wallpapers
+
+## 🚀 Installation
+
+### Prerequisites
+
+**Homebrew**
 
 ```bash
-brew install git
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Stow
+**Git & Stow**
 
 ```bash
-brew install stow
+brew install git stow
 ```
 
-## Installation
+### Setup Steps
 
-First, check out the dotfiles repo using git
+**1. Clone**
 
 ```bash
 cd ~ && git clone git@github.com:PraveenGongada/dotfiles.git
-```
-
-```bash
 cd dotfiles
 ```
 
-## Post Installation
-
-Run the following commands to setup the environment
-
-### Adding symlinks
+**2. Symlink**
 
 ```bash
 stow .
 ```
 
-### Setting up zshrc
-
-Create ~/.zshenv and set ZDOTDIR to point to ~/.config/zshrc
+**3. Configure ZSH**
 
 ```bash
 echo 'export ZDOTDIR="$HOME/.config/zshrc"' >> ~/.zshenv
 ```
 
-### Installation Homebrew Packages:
+**4. Install Packages**
 
 ```bash
-# Backing up data
-brew leaves -r > ~/.config/homebrew/leaves.txt
-brew list --cask -r > ~/.config/homebrew/casks.txt
-```
-
-```bash
-# Installing from backup
 xargs brew install < ~/.config/homebrew/leaves.txt
 xargs brew install --cask < ~/.config/homebrew/casks.txt
 ```
 
-### Insalling Custom Fonts
+### Backup Homebrew Packages
 
-⚠️ : This will overwrite any fonts with same name in the system
+```bash
+brew leaves -r > ~/.config/homebrew/leaves.txt
+brew list --cask > ~/.config/homebrew/casks.txt
+```
 
-Install the default fonts to Font Library
+### Install Custom Fonts
+
+> ⚠️ **Warning**  
+> This will overwrite any fonts with the same name in your system
 
 ```bash
 find ~/.config/fonts/default/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
-```
-
-Install the store fonts to Font Library
-
-```bash
 find ~/.config/fonts/store/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
 ```
 
-Install specific font to Font Library
+To install a specific font:
 
 ```bash
 find ~/.config/fonts/$PATH_TO_FONT/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
 ```
+
+### Additional Setup
+
+Some components require additional setup steps after installation:
+
+- **SketchyBar**: See [SketchyBar README](sketchybar/README.md) for icons installation and configuration steps
+- **Tmux**: See [TMUX README](tmux/README.md) for TPM installation and plugin setup
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [GNU Stow](https://www.gnu.org/software/stow/) for symlink management
+- All the open-source projects that made these configurations possible

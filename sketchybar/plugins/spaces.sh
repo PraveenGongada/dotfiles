@@ -29,7 +29,7 @@ update_icons() {
   icon_strip=""
   if [ "${apps}" != "" ]; then
     while read -r app; do
-      icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
+      icon_strip+=" $($CONFIG_DIR/plugins/icons.sh "$app")"
     done <<<"${apps}"
   else 
     icon_strip=" —"

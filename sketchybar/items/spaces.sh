@@ -28,7 +28,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     icon_strip=""
     if [ "${apps}" != "" ]; then
       while read -r app; do
-        icon_strip+=" $($PLUGIN_DIR/icon_map.sh "$app")"
+        icon_strip+=" $($PLUGIN_DIR/icons.sh "$app")"
       done <<<"${apps}"
     else
       icon_strip=" —"

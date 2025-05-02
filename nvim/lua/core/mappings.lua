@@ -81,7 +81,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<Space>", "<Nop>", { desc = "Disable space key's default behaviour", silent = true })
 
 -- Telescope
-keymap.set("n", "ff", "<cmd> Telescope find_files previewer=true <CR>", { desc = "Find files" }) -- Add this to enable preview -> previewer=true
+keymap.set("n", "ff", "<cmd> Telescope find_files previewer=false <CR>", { desc = "Find files" })
 keymap.set(
 	"n",
 	"fa",
@@ -103,6 +103,12 @@ keymap.set("n", "<leader>ma", "<cmd> Telescope marks <CR>", { desc = "Telescope 
 -- Telescope Git
 keymap.set("n", "<leader>gc", "<cmd> Telescope git_commits <CR>", { desc = "Git commits" })
 keymap.set("n", "<leader>gs", "<cmd> Telescope git_status <CR>", { desc = "Git status" })
+
+-- Leetcode
+keymap.set("n", "<leader>lo", "<cmd> Leet open <CR>", { desc = "Opens current question in browser" })
+keymap.set("n", "<leader>lr", "<cmd> Leet run <CR>", { desc = "Run currently opened question" })
+keymap.set("n", "<leader>ls", "<cmd> Leet submit <CR>", { desc = "Submit currently opened question" })
+keymap.set("n", "<leader>lc", "<cmd> Leet submit <CR>", { desc = "Opens console pop-up for current question" })
 
 ------------------------------------- Visual Mode -------------------------------------------
 

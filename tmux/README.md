@@ -1,19 +1,48 @@
-# TPM Plugin Manager for Tmux
+# 🖥️ Tmux Configuration
 
-Instructions to set up TPM (Tmux Plugin Manager) for managing your tmux plugins easily.
+<div align="center">
 
-## Installation
+<br/>
+<img src="https://img.shields.io/badge/tmux-v3.3a+-1BB91F?style=for-the-badge&logo=tmux&logoColor=white" alt="Tmux Version"/>
+
+_A powerful terminal multiplexer with custom configuration_
+
+</div>
+
+## 📸 Preview
+
+![Tmux](../docs/images/tmux.png)
+
+## ✨ Features
+
+- Session persistence
+- Window and pane management
+- Custom key bindings
+- Plugin support via TPM
+- Beautiful statusline
+
+## 🔌 Plugin Management
+
+This configuration uses [TPM (Tmux Plugin Manager)](https://github.com/tmux-plugins/tpm) for managing plugins.
+
+### Installation
 
 To install TPM, run the following command:
 
-```
+```bash
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
-## Installing Plugins
+### Plugin Commands
 
-To Install plugins after setting up TPM, do
+- **Install plugins**: `prefix + I`
+- **Update plugins**: `prefix + U`
+- **Remove unused plugins**: `prefix + alt + u`
 
-```
-prefix + I
-```
+## 📚 Usage Tips
+
+- The default prefix key is set to <kbd>ctrl</kbd>+<kbd>' '</kbd>
+- Create a new window with <kbd>prefix</kbd>+<kbd>c</kbd>
+- Split panes horizontally with <kbd>prefix</kbd>+<kbd>-</kbd>
+- Split panes vertically with <kbd>prefix</kbd>+<kbd>|</kbd>
+- Navigate between panes using <kbd>ctrl</kbd>+<kbd>h/j/k/l</kbd>

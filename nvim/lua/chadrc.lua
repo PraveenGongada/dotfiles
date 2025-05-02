@@ -15,7 +15,7 @@ M.base46 = {
 	integrations = {},
 	theme_toggle = { "ayu_dark", "onedark" },
 	theme = "ayu_dark", -- default themes
-	transparency = false,
+	transparency = true,
 }
 
 ------------------------------- nvchad_ui modules -----------------------------
@@ -23,7 +23,7 @@ M.ui = {
 	-- cmp themeing
 	cmp = {
 		icons_left = true, -- only for non-atom styles!
-		lspkind_text = true,
+		abbr_maxwidth = 60,
 		style = "default", -- default/flat_light/flat_dark/atom/atom_colored
 		format_colors = {
 			tailwind = true, -- will work for css lsp too
@@ -56,7 +56,7 @@ M.lsp = { signature = true }
 
 -- cheatsheet
 M.cheatsheet = {
-	theme = "grid", -- grid
+	theme = "grid",                                                  -- grid
 	excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
 }
 

@@ -28,8 +28,8 @@ config = {
 		top = 0,
 		bottom = 0,
 	},
-	-- window_background_opacity = 0.6,
-	-- macos_window_background_blur = 25,
+	window_background_opacity = 0.8,
+	macos_window_background_blur = 20,
 	mouse_bindings = {
 		-- Command + Click to open links
 		{
@@ -40,7 +40,7 @@ config = {
 	},
 	colors = {
 		foreground = "#ffffff", -- Text color
-		background = "#080c11", -- Background color
+		background = "#000000", -- Background color
 
 		cursor_bg = "#ffffff", -- Cursor color
 		cursor_border = "#ffffff", -- Cursor border color
@@ -76,16 +76,3 @@ config = {
 }
 
 return config
-
--- Adding an image backgroud
--- background = {
--- 	{
--- 		source = {
--- 			File = "/Users/" .. os.getenv("USER") .. "/.config/wallpapers/purple-background.png",
--- 		},
--- 		hsb = {
--- 			saturation = 1.2,
--- 			brightness = 0.3,
--- 		},
--- 	},
--- }

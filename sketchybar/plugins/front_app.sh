@@ -16,7 +16,7 @@ app_switched() {
       icon_strip=""
       if [ "${apps}" != "" ]; then
         while read -r app; do
-          icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
+          icon_strip+=" $($CONFIG_DIR/plugins/icons.sh "$app")"
         done <<<"${apps}"
       else
         icon_strip=" —"
@@ -29,7 +29,7 @@ app_switched() {
 
 if [ "$SENDER" = "front_app_switched" ]; then
 
-  sketchybar --set $NAME label="$INFO" icon="$($CONFIG_DIR/plugins/icon_map.sh "$INFO")"
+  sketchybar --set $NAME label="$INFO" icon="$($CONFIG_DIR/plugins/icons.sh "$INFO")"
 
   app_switched
 fi

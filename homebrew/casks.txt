@@ -1,5 +1,7 @@
-wezterm
-raycast
-kitty
-font-sf-pro
 aerospace
+arc
+font-sf-pro
+kitty
+raycast
+sf-symbols
+wezterm
