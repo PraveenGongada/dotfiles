@@ -115,6 +115,7 @@ function rest () {
 
 # Exported Paths
 export ZSH="$HOME/.config/zshrc"
+export GPG_TTY=$(tty)
 export PATH="$PATH:/Users/praveenkumar/FlutterDev/flutter/bin"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"

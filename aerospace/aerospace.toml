@@ -123,6 +123,7 @@ alt-s = 'workspace S'
 alt-b = 'workspace B'
 alt-t = 'workspace T'
 alt-v = 'workspace V'
+alt-n = 'workspace N'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -139,6 +140,7 @@ alt-shift-s = 'move-node-to-workspace S'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-v = 'move-node-to-workspace V'
+alt-shift-n = 'move-node-to-workspace N'
 
 alt-shift-f = 'fullscreen'
 
@@ -220,6 +222,10 @@ run = "move-node-to-workspace T"
 [[on-window-detected]]
 if.app-id = 'NULL-APP-BUNDLE-ID'
 run = "move-node-to-workspace T"
+
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'move-node-to-workspace N'
 
 # Floating apps
 [[on-window-detected]]
