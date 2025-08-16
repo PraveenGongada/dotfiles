@@ -227,6 +227,10 @@ run = "move-node-to-workspace T"
 if.app-id = 'notion.id'
 run = 'move-node-to-workspace N'
 
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = 'move-node-to-workspace 1'
+
 # Floating apps
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'

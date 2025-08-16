@@ -17,7 +17,6 @@ return {
 					"dist/",
 					"build/",
 					"vendor/",
-					".cache",
 					"%.o",
 					"%.a",
 					"%.out",
