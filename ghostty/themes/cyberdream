@@ -1,0 +1,25 @@
+# Cyberdream theme for Ghostty
+background = 000000
+foreground = ffffff
+cursor-color = ffffff
+cursor-text = 16181a
+selection-background = 3c4048
+selection-foreground = ffffff
+
+# Terminal colors (ANSI)
+palette = 0=16181a
+palette = 1=d9534f
+palette = 2=5eff6c
+palette = 3=f1ff5e
+palette = 4=5ea1ff
+palette = 5=bd5eff
+palette = 6=5ef1ff
+palette = 7=ffffff
+palette = 8=8d96a0
+palette = 9=d9534f
+palette = 10=5eff6c
+palette = 11=f1ff5e
+palette = 12=5ea1ff
+palette = 13=bd5eff
+palette = 14=5ef1ff
+palette = 15=ffffff

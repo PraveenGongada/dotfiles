@@ -1,0 +1,34 @@
+# Oxocarbon theme for Ghostty
+# Based on: https://github.com/nikolovlazar/dotfiles
+
+background = 161616
+foreground = d0d0d0
+cursor-color = c0caf5
+cursor-text = 1a1b26
+selection-background = 393939
+selection-foreground = d0d0d0
+
+# Terminal colors (ANSI)
+# normal
+palette = 0=262626
+palette = 1=33b1ff
+palette = 2=be95ff
+palette = 3=42be65
+palette = 4=78a9ff
+palette = 5=82cfff
+palette = 6=3ddbd9
+palette = 7=f2f2f2
+
+# bright
+palette = 8=525252
+palette = 9=33b1ff
+palette = 10=be95ff
+palette = 11=42be65
+palette = 12=78a9ff
+palette = 13=82cfff
+palette = 14=08bdba
+palette = 15=ffffff
+
+# extended colors
+palette = 16=ff9e64
+palette = 17=db4b4b
