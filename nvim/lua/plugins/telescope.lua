@@ -11,6 +11,8 @@ return {
 
 		telescope.setup({
 			defaults = {
+				dynamic_preview_title = true,
+				results_title = false,
 				file_ignore_patterns = {
 					"node_modules",
 					".git/",
@@ -78,6 +80,9 @@ return {
 				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 				-- Developer configurations: Not meant for general override
 				buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+				cache_picker = {
+					num_pickers = 10,
+				},
 				mappings = {
 					n = {
 						["q"] = actions.close, -- close
@@ -93,6 +98,36 @@ return {
 		})
 
 		telescope.load_extension("fzf")
+		local builtin = require("telescope.builtin")
+
+		-- Exact word match search
+		vim.keymap.set("n", "fw", function()
+			builtin.live_grep({
+				prompt_title = "Live Grep (Exact Word)",
+				additional_args = function()
+					return { "--word-regexp" }
+				end,
+			})
+		end, { desc = "Find exact word matches" })
+
+		-- Case sensitive search
+		vim.keymap.set("n", "fc", function()
+			builtin.live_grep({
+				prompt_title = "Live Grep (Case Sensitive)",
+				additional_args = function()
+					return { "--case-sensitive" }
+				end,
+			})
+		end, { desc = "Find with case sensitivity" })
+
+		vim.keymap.set("n", "fe", function()
+			builtin.live_grep({
+				prompt_title = "Live Grep (Exact Word + Case Sensitive)",
+				additional_args = function()
+					return { "--word-regexp", "--case-sensitive", "--fixed-strings" }
+				end,
+			})
+		end, { desc = "Find exact word with case sensitivity" })
 	end,
 }
 

@@ -47,9 +47,17 @@ return {
 			},
 		}
 
-		-- Update LSP in insert mode
+		-- LSP Diagnostics
 		vim.diagnostic.config({
-			update_in_insert = true,
+			update_in_insert = false,
+			virtual_text = {
+				spacing = 4,
+				source = "if_many",
+				prefix = "●",
+			},
+			float = {
+				border = "rounded",
+			},
 		})
 
 		-- Lua

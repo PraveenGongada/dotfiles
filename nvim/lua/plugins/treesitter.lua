@@ -24,11 +24,13 @@ return {
 				"vim",
 				"vimdoc",
 				"bash",
-				"java"
+				"java",
+				"haskell"
 			},
 			highlight = {
 				enable = true,
 				use_languagetree = true,
+				additional_vim_regex_highlighting = false,
 			},
 			-- list of language that will be disabled
 			-- disable = { },
