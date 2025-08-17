@@ -77,6 +77,7 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=white'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=white'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=white'
 ZSH_HIGHLIGHT_STYLES[default]='fg=white'
+ZSH_HIGHLIGHT_STYLES[function]='fg=white'
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -113,11 +114,12 @@ function rest () {
   osascript -e 'display notification "Pomodoro" with title "Break is over! Get back to work 😬" sound name "Crystal"'
 }
 
-# Exported Paths
+# Clear
+clear() { command clear; [ -n "$TMUX" ] && tmux clear-history; return true}
+
 export ZSH="$HOME/.config/zshrc"
 export GPG_TTY=$(tty)
 export PATH="$PATH:/Users/praveenkumar/FlutterDev/flutter/bin"
-export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:/Users/praveenkumar/istio-1.26.3/bin"
 export CONFIG_DIR="$HOME/.config/lazygit"
@@ -129,3 +131,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+# Kubectl completion
+source <(kubectl completion zsh)

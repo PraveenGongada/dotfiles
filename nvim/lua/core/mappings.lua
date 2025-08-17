@@ -88,7 +88,7 @@ keymap.set(
 	"<cmd> Telescope find_files follow=true no_ignore=true hidden=true previewer=true <CR>",
 	{ desc = "Find all" }
 )
-keymap.set("n", "fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
 keymap.set("n", "fm", "<cmd> Telescope resume <CR>", { desc = "Resume Search" })
 keymap.set("n", "fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>", { desc = "Help page" })

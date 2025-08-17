@@ -15,6 +15,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       background.color=$TRANSPARENT \
       label.color=$ACCENT_COLOR \
       icon.color=$ACCENT_COLOR \
+      script="" \
       display=$m \
       label.font="sketchybar-app-font:Regular:12.0" \
       icon.font="SF Pro:Semibold:12.0" \

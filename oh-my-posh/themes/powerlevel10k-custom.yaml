@@ -2,14 +2,14 @@
 
 secondary_prompt:
   template: "❯❯ "
-  foreground: magenta
+  foreground: "#bd5eff"
   background: transparent
 transient_prompt:
   template: "❯ "
   background: transparent
   foreground_templates:
-  - "{{if gt .Code 0}}red{{end}}"
-  - "{{if eq .Code 0}}magenta{{end}}"
+  - "{{if gt .Code 0}}#d9534f{{end}}"
+  - "{{if eq .Code 0}}#bd5eff{{end}}"
 console_title_template: "{{ .Shell }} in {{ .Folder }}"
 blocks:
 - type: prompt
@@ -19,7 +19,7 @@ blocks:
       cache_duration: none
       style: folder
     template: "{{ .Path }}"
-    foreground: blue
+    foreground: "#5ea1ff"
     background: transparent
     type: path
     style: plain
@@ -31,7 +31,7 @@ blocks:
       fetch_upstream_icon: false
       status_colors: false
     template: " {{ .HEAD }} "
-    foreground: p:grey
+    foreground: "#ffffff"
     background: transparent
     type: git
     style: plain
@@ -46,8 +46,8 @@ blocks:
     type: text
     style: plain
     foreground_templates:
-    - "{{if gt .Code 0}}red{{end}}"
-    - "{{if eq .Code 0}}magenta{{end}}"
+    - "{{if gt .Code 0}}#d9534f{{end}}"
+    - "{{if eq .Code 0}}#bd5eff{{end}}"
   newline: true
 version: 3
 final_space: true
