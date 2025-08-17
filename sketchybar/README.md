@@ -44,13 +44,13 @@ brew install --cask sf-symbols
 **Install SketchyBar App Font**
 
 ```bash
-curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.32/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.40/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 ```
 
 **Add icon_map.sh file**
 
 ```bash
-curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.32/icon_map.sh -o $HOME/.config/sketchybar/icon_map.sh
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.40/icon_map.sh -o $HOME/.config/sketchybar/icon_map.sh
 ```
 
 ## ⚙️ Configuration
