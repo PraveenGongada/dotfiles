@@ -1,7 +1,11 @@
+1password-cli
 aerospace
 arc
+claude-code
 font-sf-pro
+ghostty
 kitty
+obsidian
 raycast
 sf-symbols
 wezterm
