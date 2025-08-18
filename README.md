@@ -28,6 +28,7 @@ This repository contains configuration files for various tools and applications:
 - **[zshrc](zshrc/)** - Z Shell configuration
 - **[nvim](nvim/)** - Neovim configuration
 - **[tmux](tmux/)** - Terminal multiplexer configuration
+- **[ghostty](ghostty/)** - GPU-accelerated terminal emulator
 - **[kitty](kitty/)** - GPU-based terminal emulator
 - **[wezterm](wezterm/)** - GPU-accelerated cross-platform terminal emulator
 - **[lazygit](lazygit/)** - Terminal UI for git commands
