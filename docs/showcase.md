@@ -4,11 +4,11 @@ This page displays detailed screenshots of my dotfiles configuration in action.
 
 ## Terminal Setup
 
-### Kitty Terminal
+### Ghostty Terminal
 
-![Kitty Terminal](./images/kitty.png)
+![Ghostty Terminal](./images/ghostty.png)
 
-_A fast, feature-rich, GPU-based terminal emulator_
+_A fast, feature-rich, GPU-accelerated terminal emulator_
 
 ## Development Environment
 
