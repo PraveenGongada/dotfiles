@@ -60,12 +60,6 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 ZVM_VI_VISUAL_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 ZVM_VI_OPPEND_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 
-function zvm_after_lazy_keybindings() {
-  # Remap toggle history 
-  zvm_bindkey vicmd 'j' up-line-or-history
-  zvm_bindkey vicmd 'k' down-line-or-history
-}
-
 # Source .fzf.zsh so that the ctrl+r bindkey is given back fzf
 zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
 

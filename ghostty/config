@@ -12,7 +12,7 @@ font-feature = +ss01
 font-feature = +cv03
 
 # Cursor settings
-cursor-style = block
+cursor-style-blink = false
 
 # Window settings
 window-decoration = false
