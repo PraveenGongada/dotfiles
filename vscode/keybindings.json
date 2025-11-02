@@ -1,0 +1,7 @@
+[
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "editorTextFocus"
+  }
+]

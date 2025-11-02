@@ -2,12 +2,12 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[manager]
+[mgr]
 ratio          = [ 1, 4, 3 ]
-sort_by        = "modified"
+sort_by        = "natural"
 sort_sensitive = false
-sort_reverse 	 = true
-sort_dir_first = false
+sort_reverse 	 = false
+sort_dir_first = true
 sort_translit  = false
 linemode       = "none"
 show_hidden    = false
@@ -139,7 +139,7 @@ cd_origin = "top-center"
 cd_offset = [ 0, 2, 50, 3 ]
 
 # create
-create_title  = "Create:"
+create_title  = ["Create:", "Create Dir:"]
 create_origin = "top-center"
 create_offset = [ 0, 2, 50, 3 ]
 

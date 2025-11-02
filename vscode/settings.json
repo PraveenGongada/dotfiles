@@ -1,0 +1,98 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dotenv.enableAutocloaking": true,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "files.associations": {
+    ".env*": "dotenv"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "terminal.explorerKind": "external",
+  "window.commandCenter": false,
+  "workbench.colorTheme": "Pitch Black",
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.stickyScroll.enabled": false,
+  "javascript.autoClosingTags": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "go.toolsManagement.autoUpdate": true,
+  "docker.extension.enableComposeLanguageServer": false,
+  "cursor.cpp.disabledLanguages": ["plaintext"],
+  "editor.fontFamily": "Maple Mono NF",
+  "editor.wordWrap": "on",
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.renderWhitespace": "boundary",
+  "editor.renderControlCharacters": false,
+  "search.useGlobalIgnoreFiles": true,
+
+  // Vim related config
+  "vim.leader": "<space>",
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/Users/praveenkumar/.config/vim/.vimrc",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    }
+  ]
+  // End Vim config
+}

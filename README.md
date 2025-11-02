@@ -40,79 +40,122 @@ This repository contains configuration files for various tools and applications:
 - **[fonts](fonts/)** - Custom fonts collection
 - **[wallpapers](wallpapers/)** - Custom wallpapers
 
-## 🚀 Installation
+## ⚡ Quick Start
 
-### Prerequisites
-
-**Homebrew**
+Run this single command to install everything:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/PraveenGongada/dotfiles/main/setup.sh | bash
 ```
 
-**Git & Stow**
+That's it! The installer handles everything automatically, including Homebrew installation, package setup, and dotfiles configuration.
+
+## 🛠️ Installation Options
+
+### Default Installation
+
+The installer sets up:
+
+- Homebrew package manager
+- Development tools (Neovim, Tmux, Git, etc.)
+- Shell configuration (Zsh with custom theme)
+- Window management (AeroSpace, SketchyBar)
+- Terminal applications (Yazi, Lazygit)
+- Custom fonts and themes
+
+### Custom Installation
+
+Use flags to customize the installation:
 
 ```bash
-brew install git stow
+# Skip package installation
+./setup.sh --no-packages
+
+# Verbose output with automatic confirmation
+./setup.sh --verbose --force
+
+# Use a different repository
+DOTFILES_REPO=username/dotfiles ./setup.sh
+
+# Skip backups for faster installation
+./setup.sh --skip-backup
 ```
 
-### Setup Steps
+### Manual Installation
 
-**1. Clone**
+If you prefer to clone the repository first:
 
 ```bash
-cd ~ && git clone git@github.com:PraveenGongada/dotfiles.git
-cd dotfiles
+git clone https://github.com/PraveenGongada/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./setup.sh
 ```
 
-**2. Symlink**
+## 🔧 Post-Installation
+
+After installation:
+
+1. **Restart your terminal** to load the new shell configuration
+2. **Install Tmux plugins**: Open tmux and press `Ctrl+Space + I`
+
+## 🚨 Troubleshooting
+
+The installer includes built-in recovery features:
+
+**Resume interrupted installation:**
 
 ```bash
-stow .
+# Simply re-run the installer
+./setup.sh
 ```
 
-**3. Configure ZSH**
+**Start completely fresh:**
 
 ```bash
-echo 'export ZDOTDIR="$HOME/.config/zshrc"' >> ~/.zshenv
+rm ~/.dotfiles_setup_state
+./setup.sh
 ```
 
-**4. Install Packages**
+**Check what went wrong:**
 
 ```bash
-xargs brew install < ~/.config/homebrew/leaves.txt
-xargs brew install --cask < ~/.config/homebrew/casks.txt
+# View detailed logs
+cat ~/.dotfiles_install.log
+
+# Restore from automatic backups
+ls ~/.dotfiles_backup_*/
 ```
 
-### Backup Homebrew Packages
+## 📚 Usage
+
+**Update package list:**
 
 ```bash
-brew leaves -r > ~/.config/homebrew/leaves.txt
-brew list --cask > ~/.config/homebrew/casks.txt
+cd ~/dotfiles/homebrew
+brew bundle dump --force
 ```
 
-### Install Custom Fonts
-
-> ⚠️ **Warning**  
-> This will overwrite any fonts with the same name in your system
+**Install specific fonts:**
 
 ```bash
-find ~/.config/fonts/default/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
-find ~/.config/fonts/store/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
+find ~/.config/fonts/ -name "*.ttf" -o -name "*.otf" | xargs -I {} cp {} ~/Library/Fonts/
 ```
 
-To install a specific font:
+## 📖 Documentation
 
-```bash
-find ~/.config/fonts/$PATH_TO_FONT/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
-```
+Component-specific guides:
 
-### Additional Setup
+- **SketchyBar**: [Configuration guide](sketchybar/README.md)
+- **Tmux**: [Key bindings and usage](tmux/README.md)
 
-Some components require additional setup steps after installation:
+## ⚙️ Customization
 
-- **SketchyBar**: See [SketchyBar README](sketchybar/README.md) for icons installation and configuration steps
-- **Tmux**: See [TMUX README](tmux/README.md) for TPM installation and plugin setup
+These dotfiles are designed to be forked and customized. Key areas to modify:
+
+- `zshrc/.zshrc` - Shell aliases and functions
+- `nvim/` - Neovim configuration and plugins
+- `sketchybar/` - Status bar appearance and widgets
+- `homebrew/Brewfile` - Additional packages to install
 
 ## 📝 License
 

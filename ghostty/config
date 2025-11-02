@@ -15,7 +15,6 @@ font-feature = +cv03
 cursor-style-blink = false
 
 # Window settings
-window-decoration = false
 macos-titlebar-style = hidden
 
 # macOS specific settings

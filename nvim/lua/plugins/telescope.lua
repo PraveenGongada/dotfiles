@@ -101,7 +101,7 @@ return {
 		local builtin = require("telescope.builtin")
 
 		-- Exact word match search
-		vim.keymap.set("n", "fw", function()
+		vim.keymap.set("n", "<leader>fw", function()
 			builtin.live_grep({
 				prompt_title = "Live Grep (Exact Word)",
 				additional_args = function()

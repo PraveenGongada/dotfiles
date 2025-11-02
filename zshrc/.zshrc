@@ -99,13 +99,11 @@ alias lg="lazygit"
 
 # Pomodoro
 function work () {
-  timer 25m
-  osascript -e 'display notification "Pomodoro" with title "Work Timer is up! Take a Break 😊" sound name "Crystal"'
+  timer 25m && osascript -e 'display notification "Pomodoro" with title "Work Timer is up! Take a Break 😊" sound name "Crystal"'
 }
 
 function rest () {
-  timer 5m
-  osascript -e 'display notification "Pomodoro" with title "Break is over! Get back to work 😬" sound name "Crystal"'
+  timer 5m && osascript -e 'display notification "Pomodoro" with title "Break is over! Get back to work 😬" sound name "Crystal"'
 }
 
 # Clear
