@@ -1,0 +1,145 @@
+[
+  // Global menu navigation (command palette, context menus, pickers, etc.)
+  // These MUST be at root level with use_key_equivalents for menu actions to work
+  {
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious",
+    },
+  },
+  // Buffer search bar navigation
+  {
+    "context": "BufferSearchBar",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-j": "search::SelectNextMatch",
+      "ctrl-k": "search::SelectPreviousMatch",
+    },
+  },
+  // Autocomplete/code actions menu navigation
+  {
+    "context": "Editor && (showing_completions || showing_code_actions)",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
+  },
+  // Workspace - default bindings for opening panels
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+      "ctrl-n": "workspace::ToggleLeftDock",
+      "ctrl-g": "git_panel::ToggleFocus",
+      "ctrl-space m": "workspace::ToggleBottomDock",
+      "ctrl-space -": "pane::SplitDown",
+      "ctrl-space |": "pane::SplitRight",
+      "ctrl-space n": "workspace::NewTerminal",
+      "ctrl-space x": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-space m": "workspace::ToggleZoom",
+    },
+  },
+  // Project Panel (Explorer)
+  {
+    "context": "ProjectPanel",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-n": "workspace::ToggleLeftDock",
+      "ctrl-g": "git_panel::ToggleFocus",
+    },
+  },
+  // Git Panel - base context
+  {
+    "context": "GitPanel",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-n": "project_panel::ToggleFocus",
+      "ctrl-g": "workspace::ToggleLeftDock",
+    },
+  },
+  // Git Panel ChangesList
+  {
+    "context": "GitPanel && ChangesList",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-n": "project_panel::ToggleFocus",
+      "ctrl-g": "workspace::ToggleLeftDock",
+    },
+  },
+  // Git Panel CommitEditor (the outer context)
+  {
+    "context": "GitPanel && CommitEditor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-n": "project_panel::ToggleFocus",
+      "ctrl-g": "workspace::ToggleLeftDock",
+    },
+  },
+  // CommitEditor > Editor - when typing in the commit message field
+  {
+    "context": "CommitEditor > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-n": "project_panel::ToggleFocus",
+      "ctrl-g": "workspace::ToggleLeftDock",
+    },
+  },
+  // Insert mode
+  {
+    "context": "Editor && vim_mode == insert && !(showing_completions || showing_code_actions)",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "ctrl-h": "vim::Left",
+      "ctrl-l": "vim::Right",
+      "ctrl-j": "vim::Down",
+      "ctrl-k": "vim::Up",
+      "ctrl-b": "vim::StartOfLine",
+      "ctrl-e": "vim::EndOfLine",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "space s v": "pane::SplitRight",
+      "space s h": "pane::SplitDown",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+      "f a": "file_finder::Toggle",
+      "space f w": "pane::DeploySearch",
+      "ctrl-s": "workspace::Save",
+      "ctrl-n": "workspace::ToggleLeftDock",
+      "ctrl-g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-tab": "editor::Outdent",
+      "tab": "editor::Indent",
+    },
+  },
+]
