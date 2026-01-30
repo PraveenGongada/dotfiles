@@ -36,7 +36,7 @@
       "ctrl-space m": "workspace::ToggleBottomDock",
       "ctrl-space -": "pane::SplitDown",
       "ctrl-space |": "pane::SplitRight",
-      "ctrl-space n": "workspace::NewTerminal",
+      "ctrl-space c": "workspace::NewTerminal",
       "ctrl-space x": "pane::CloseActiveItem",
     },
   },
@@ -56,7 +56,11 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
       "ctrl-space m": "workspace::ToggleZoom",
+      "ctrl-space [": "workspace::MovePaneLeft",
+      "ctrl-space ]": "workspace::MovePaneRight",
     },
   },
   // Project Panel (Explorer)
@@ -109,6 +113,7 @@
     "context": "Editor && vim_mode == insert && !(showing_completions || showing_code_actions)",
     "bindings": {
       "j j": "vim::NormalBefore",
+      "j k": "vim::NormalBefore",
       "ctrl-h": "vim::Left",
       "ctrl-l": "vim::Right",
       "ctrl-j": "vim::Down",
@@ -133,6 +138,9 @@
       "ctrl-s": "workspace::Save",
       "ctrl-n": "workspace::ToggleLeftDock",
       "ctrl-g": "git_panel::ToggleFocus",
+      "enter": "editor::OpenExcerpts",
+      "n": "search::SelectNextMatch",
+      "N": "search::SelectPreviousMatch",
     },
   },
   {

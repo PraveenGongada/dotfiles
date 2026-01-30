@@ -1,0 +1,88 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "tab_size": 2,
+  "vertical_scroll_margin": 6.0,
+  "scrollbar": {
+    "axes": {
+      "horizontal": false
+    },
+    "show": "auto"
+  },
+  "ui_font_family": ".SystemUIFont",
+  "git_panel": {
+    "tree_view": false
+  },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+  "terminal": {
+    "dock": "bottom",
+    "toolbar": {
+      "breadcrumbs": false
+    }
+  },
+  "title_bar": {
+    "show_branch_name": true,
+    "show_menus": false,
+    "show_user_picture": true,
+    "show_user_menu": false,
+    "show_sign_in": false,
+    "show_project_items": true,
+    "show_branch_icon": true
+  },
+  "project_panel": {
+    "hide_root": true,
+    "button": true
+  },
+  "use_system_window_tabs": false,
+  "window_decorations": "client",
+  "tabs": {
+    "show_diagnostics": "errors",
+    "git_status": true,
+    "file_icons": true
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "toolbar": {
+    "code_actions": true,
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": true,
+    "agent_review": true
+  },
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "preview_tabs": {
+    "enabled": false
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "buffer_font_family": "Maple Mono NF",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "base_keymap": "VSCode",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  }
+}
