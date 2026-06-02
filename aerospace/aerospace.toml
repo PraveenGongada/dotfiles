@@ -121,6 +121,7 @@ alt-t = 'workspace T'
 alt-v = 'workspace V'
 alt-n = 'workspace N'
 alt-m = 'workspace M'
+alt-o = 'workspace O'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -135,6 +136,7 @@ alt-shift-t = 'move-node-to-workspace T'
 alt-shift-v = 'move-node-to-workspace V'
 alt-shift-n = 'move-node-to-workspace N'
 alt-shift-m = 'move-node-to-workspace M'
+alt-shift-o = 'move-node-to-workspace O'
 
 alt-shift-f = 'fullscreen'
 
@@ -233,6 +235,14 @@ run = 'move-node-to-workspace N'
 if.app-id = 'com.1password.1password'
 run = 'move-node-to-workspace 1'
 
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = "move-node-to-workspace O"
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = "move-node-to-workspace V"
+
 # Floating apps
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -241,7 +251,3 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
 run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'
-run = "move-node-to-workspace V"

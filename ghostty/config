@@ -25,7 +25,7 @@ macos-option-as-alt = true
 window-colorspace = display-p3
 
 # Background effects (transparency and blur)
-background-opacity = 0.8
+background-opacity = 0.6
 background-blur-radius = 20
 
 # Current theme

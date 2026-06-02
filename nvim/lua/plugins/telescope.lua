@@ -14,11 +14,6 @@ return {
 				dynamic_preview_title = true,
 				results_title = false,
 				file_ignore_patterns = {
-					"node_modules",
-					".git/",
-					"dist/",
-					"build/",
-					"vendor/",
 					"%.o",
 					"%.a",
 					"%.out",
@@ -46,7 +41,11 @@ return {
 					"--column",
 					"--smart-case",
 					"--hidden",
-					"--glob=!.git/",
+					"--glob=!**/.git/**",
+					"--glob=!**/node_modules/**",
+					"--glob=!**/dist/**",
+					"--glob=!**/build/**",
+					"--glob=!**/vendor/**",
 				},
 				prompt_prefix = "   ",
 				selection_caret = "  ",
@@ -91,6 +90,12 @@ return {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 					},
+				},
+			},
+
+			pickers = {
+				find_files = {
+					find_command = { "fd", "--type", "f", "--color=never", "--exclude", "node_modules", "--exclude", ".git" },
 				},
 			},
 

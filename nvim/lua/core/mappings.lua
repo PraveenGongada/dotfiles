@@ -38,6 +38,10 @@ keymap.set("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy the entire file to cli
 -- Clear serach highlight
 keymap.set("n", "<Esc>", "<cmd> noh <CR>", { desc = "Clear search highlights" })
 
+-- Jumplist back/forward
+keymap.set("n", "<C-->", "<C-o>", { desc = "Jump back" })
+keymap.set("n", "<C-=>", "<C-i>", { desc = "Jump forward" })
+
 -- Toggle line numbers
 -- keymap.set("n", "<leader>n", "<cmd> set nu! <CR>", { desc = "Toggle line numbers" })
 -- keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>", { desc = "Toggle relative line numbers" })

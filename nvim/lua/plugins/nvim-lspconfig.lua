@@ -9,10 +9,6 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
-		require("nvchad.lsp")
-		local lspconfig = require("lspconfig")
-		local util = require("lspconfig/util")
-
 		-- export on_attach & capabilities for custom lspconfigs
 		local on_attach = function(client, _)
 			if client.server_capabilities.signatureHelpProvider then
@@ -47,6 +43,12 @@ return {
 			},
 		}
 
+		vim.lsp.config("*", {
+			on_init = on_init,
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
 		-- LSP Diagnostics
 		vim.diagnostic.config({
 			update_in_insert = false,
@@ -61,13 +63,9 @@ return {
 		})
 
 		-- Lua
-		lspconfig.lua_ls.setup({
-			on_init = on_init,
-			on_attach = on_attach,
-			capabilities = capabilities,
+		vim.lsp.config("lua_ls", {
 			cmd = { "lua-language-server" },
 			filetypes = { "lua" },
-			single_file_support = true,
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -78,14 +76,10 @@ return {
 		})
 
 		-- Golang
-		lspconfig.gopls.setup({
-			on_init = on_init,
-			on_attach = on_attach,
-			capabilities = capabilities,
+		vim.lsp.config("gopls", {
 			cmd = { "gopls" },
-			single_file_support = true,
 			filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			root_dir = util.root_pattern("go.work", "go.mod"),
+			root_markers = { "go.work", "go.mod" },
 			settings = {
 				gopls = {
 					completeUnimported = true,
@@ -96,27 +90,13 @@ return {
 		})
 
 		-- TypeScript
-		lspconfig.ts_ls.setup({
-			on_init = on_init,
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+		vim.lsp.config("ts_ls", {
 			cmd = { "typescript-language-server", "--stdio" },
+			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 		})
 
-		-- tailwind
-		lspconfig.tailwindcss.setup({
-			on_init = on_init,
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-
-		-- css
-		lspconfig.cssls.setup({
-			on_init = on_init,
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
+		-- tailwind & css use the configs shipped by nvim-lspconfig
+		vim.lsp.enable({ "lua_ls", "gopls", "ts_ls", "tailwindcss", "cssls" })
 
 		-- Mappings
 		local keymap = vim.keymap

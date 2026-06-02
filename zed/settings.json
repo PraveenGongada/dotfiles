@@ -7,6 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "tab_size": 2,
   "vertical_scroll_margin": 6.0,
   "scrollbar": {
@@ -17,6 +28,7 @@
   },
   "ui_font_family": ".SystemUIFont",
   "git_panel": {
+    "dock": "left",
     "tree_view": false
   },
   "git": {
@@ -40,6 +52,7 @@
     "show_branch_icon": true
   },
   "project_panel": {
+    "dock": "left",
     "hide_root": true,
     "button": true
   },

@@ -13,9 +13,9 @@ M.base46 = {
 	},
 	changed_themes = {},
 	integrations = {},
-	theme_toggle = { "ayu_dark", "onedark" },
-	theme = "ayu_dark", -- default themes
-	transparency = true,
+	theme_toggle = { "ayu_black", "onedark" },
+	theme = "ayu_black", -- default themes
+	transparency = false,
 }
 
 ------------------------------- nvchad_ui modules -----------------------------
@@ -56,7 +56,7 @@ M.lsp = { signature = true }
 
 -- cheatsheet
 M.cheatsheet = {
-	theme = "grid",                                                  -- grid
+	theme = "grid",
 	excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
 }
 
@@ -65,7 +65,7 @@ M.colorify = {
 	enabled = true,
 	mode = "virtual", -- fg, bg, virtual
 	virt_text = "󱓻 ",
-	highlight = { hex = true, lspvars = true },
+	highlight = { hex = true, lspvars = false },
 }
 
 -- mason

@@ -128,3 +128,4 @@ eval "$(zoxide init zsh)"
 
 # Kubectl completion
 source <(kubectl completion zsh)
+export PATH="$HOME/.local/bin:$PATH"

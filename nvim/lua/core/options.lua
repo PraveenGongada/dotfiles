@@ -6,7 +6,7 @@ local g = vim.g
 opt.laststatus = 3            -- Use a global statusline
 opt.showmode = false          -- Disable showing the current mode (useful if you're using a statusline plugin)
 opt.clipboard = "unnamedplus" -- Use system clipboard for yank, delete, change, and put operations
-opt.cursorline = true         -- Highlight the line the cursor is on for better visibility
+opt.cursorline = false        -- Disable highlighting the line the cursor is on
 
 -- Indentation Settings
 opt.expandtab = true   -- Convert tabs to spaces
