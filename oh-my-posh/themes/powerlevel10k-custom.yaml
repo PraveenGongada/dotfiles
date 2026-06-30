@@ -15,21 +15,22 @@ blocks:
 - type: prompt
   alignment: left
   segments:
-  - properties:
-      cache_duration: none
+  - template: "{{ .Icon }} "
+    foreground: "#ffffff"
+    background: transparent
+    type: os
+    style: plain
+  - options:
       style: folder
     template: "{{ .Path }}"
     foreground: "#5ea1ff"
     background: transparent
     type: path
     style: plain
-  - properties:
+  - options:
       branch_icon: ""
-      cache_duration: none
-      fetch_stash_count: false
       fetch_status: false
       fetch_upstream_icon: false
-      status_colors: false
     template: " {{ .HEAD }} "
     foreground: "#ffffff"
     background: transparent
@@ -37,11 +38,19 @@ blocks:
     style: plain
   newline: true
 - type: prompt
+  alignment: right
+  segments:
+  - options:
+      parse_kubeconfig: true
+    template: "☸ {{ .Cluster }} "
+    foreground: "#326ce5"
+    background: transparent
+    type: kubectl
+    style: plain
+- type: prompt
   alignment: left
   segments:
-  - properties:
-      cache_duration: none
-    template: ❯
+  - template: ❯
     background: transparent
     type: text
     style: plain

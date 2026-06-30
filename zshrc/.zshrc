@@ -1,5 +1,4 @@
 if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -111,11 +110,23 @@ function rest () {
 # Clear
 clear() { command clear; [ -n "$TMUX" ] && tmux clear-history; return true}
 
+# Add kubernetes context
+kubeadd() {
+  if [ -z "$1" ] || [ ! -f "$1" ]; then
+    echo "usage: kubeadd <path-to-kubeconfig>"; return 1
+  fi
+  cp ~/.kube/config ~/.kube/config.bak 2>/dev/null
+  KUBECONFIG=~/.kube/config:"$1" kubectl config view --flatten > ~/.kube/.merged \
+    && mv ~/.kube/.merged ~/.kube/config \
+    && chmod 600 ~/.kube/config \
+    && echo "✓ merged $1 (backup: ~/.kube/config.bak)" \
+    && kubectl config get-contexts
+}
+
 export ZSH="$HOME/.config/zshrc"
 export GPG_TTY=$(tty)
-export PATH="$PATH:/Users/praveenkumar/FlutterDev/flutter/bin"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$PATH:/Users/praveenkumar/istio-1.26.3/bin"
+export PATH="$PATH:/Users/praveenkumar/.istioctl/bin"
 export CONFIG_DIR="$HOME/.config/lazygit"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.local/share/zinit/plugins/JanDeDobbeleer/oh-my-posh:$PATH"
