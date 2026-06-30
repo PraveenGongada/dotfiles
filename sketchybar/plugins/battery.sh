@@ -2,10 +2,11 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
-CHARGING=$(pmset -g batt | grep 'AC Power')
+BATT=$(pmset -g batt)
+PERCENTAGE=$(echo "$BATT" | grep -Eo "\d+%" | cut -d% -f1)
+CHARGING=$(echo "$BATT" | grep 'AC Power')
 
-if [ $PERCENTAGE = "" ]; then
+if [ -z "$PERCENTAGE" ]; then
   exit 0
 fi
 
