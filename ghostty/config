@@ -32,3 +32,4 @@ background-blur-radius = 20
 theme = cyberdream 
 
 # Alternative way to set theme (config-file = ~/.config/ghostty/themes/cyberdream)
+keybind = shift+enter=text:\x1b\r
