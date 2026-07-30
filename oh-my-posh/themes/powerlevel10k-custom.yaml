@@ -42,11 +42,13 @@ blocks:
   segments:
   - options:
       parse_kubeconfig: true
-    template: "☸ {{ .Cluster }} "
+    template: "☸ {{ .Context }} "
     foreground: "#326ce5"
     background: transparent
     type: kubectl
     style: plain
+    foreground_templates:
+    - '{{ if or (contains "prod" (lower .Cluster)) (contains "prod" (lower .Context)) }}#d9534f{{ end }}'
 - type: prompt
   alignment: left
   segments:
