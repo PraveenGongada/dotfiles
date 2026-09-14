@@ -85,6 +85,8 @@ return {
 					completeUnimported = true,
 					usePlaceholders = true,
 					gofumpt = true,
+					staticcheck = true,
+					analyses = { unusedparams = true, unusedwrite = true },
 				},
 			},
 		})

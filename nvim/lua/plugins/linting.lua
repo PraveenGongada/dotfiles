@@ -16,6 +16,15 @@ return {
 			go = { "golangcilint" },
 		}
 
+		local gopls_covered = { staticcheck = true, govet = true, unused = true }
+		local gl = lint.linters.golangcilint
+		local gl_parser = gl.parser
+		gl.parser = function(...)
+			return vim.tbl_filter(function(d)
+				return not gopls_covered[d.source]
+			end, gl_parser(...))
+		end
+
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost" }, {

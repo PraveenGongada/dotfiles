@@ -24,23 +24,16 @@ return {
 				go = { "gofumpt", "goimports-reviser", "golines" },
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_format = "fallback",
 				async = false,
 				timeout_ms = 1000,
 			},
 		})
 
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			callback = function(args)
-				require("conform").format({ bufnr = args.buf })
-			end,
-		})
-
 		-- -- Keymaps
 		vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 			conform.format({
-				lsp_fallback = true,
+				lsp_format = "fallback",
 				async = false,
 				timeout_ms = 1000,
 			})
