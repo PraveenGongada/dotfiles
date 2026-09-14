@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPost", "BufNewFile" },
+	event = "VeryLazy",
 	dependencies = {
 		-- Automatically install LSPs and related tools to stdpath for Neovim
 		{ "williamboman/mason.nvim" }, -- NOTE: Must be loaded before dependants
@@ -18,7 +18,7 @@ return {
 
 		-- disable semantic tokens
 		local on_init = function(client, _)
-			if client.supports_method("textDocument/semanticTokens") then
+			if client:supports_method("textDocument/semanticTokens") then
 				client.server_capabilities.semanticTokensProvider = nil
 			end
 		end
