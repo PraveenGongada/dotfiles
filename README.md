@@ -36,7 +36,7 @@ This repository contains configuration files for various tools and applications:
 - **[aerospace](aerospace/)** - Window manager for macOS
 - **[yazi](yazi/)** - Terminal file manager
 - **[oh-my-posh](oh-my-posh/)** - Prompt theme engine
-- **[homebrew](homebrew/)** - Package manager backup
+- **[homebrew](homebrew/)** - Package manager Brewfile
 - **[fonts](fonts/)** - Custom fonts collection
 - **[wallpapers](wallpapers/)** - Custom wallpapers
 
@@ -80,15 +80,13 @@ echo 'export ZDOTDIR="$HOME/.config/zshrc"' >> ~/.zshenv
 **4. Install Packages**
 
 ```bash
-xargs brew install < ~/.config/homebrew/leaves.txt
-xargs brew install --cask < ~/.config/homebrew/casks.txt
+brew bundle --file ~/.config/homebrew/Brewfile
 ```
 
 ### Backup Homebrew Packages
 
 ```bash
-brew leaves -r > ~/.config/homebrew/leaves.txt
-brew list --cask > ~/.config/homebrew/casks.txt
+brew bundle dump --force --file ~/.config/homebrew/Brewfile --no-describe --tap --formula --cask
 ```
 
 ### Install Custom Fonts

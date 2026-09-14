@@ -1,0 +1,7 @@
+{
+  "trustedformulae": [
+    "charmbracelet/tap/crush",
+    "hashicorp/tap/vault",
+    "praveengongada/tap/catalyst"
+  ]
+}
