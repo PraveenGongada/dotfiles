@@ -1,0 +1,52 @@
+[
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.focusSideBar",
+    "when": "!sideBarVisible && (editorTextFocus && vim.mode != 'Insert' || !inputFocus)"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible && (editorTextFocus && vim.mode != 'Insert' || !inputFocus)"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "activeEditorGroupIndex != 1 && (editorTextFocus && vim.mode != 'Insert' || !inputFocus && !terminalFocus)"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "terminalFocus || activeEditorGroupIndex == 1 && (editorTextFocus && vim.mode != 'Insert' || !inputFocus)"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus && !terminalFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusPanel",
+    "when": "editorTextFocus && vim.mode != 'Insert' || !inputFocus && !panelFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus || panelFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus && !explorerResourceIsRoot && !explorerResourceReadonly"
+  }
+]

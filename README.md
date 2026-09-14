@@ -27,6 +27,7 @@ This repository contains configuration files for various tools and applications:
 
 - **[zshrc](zshrc/)** - Z Shell configuration
 - **[nvim](nvim/)** - Neovim configuration
+- **[vim](vim/)** - Plugin-free Vim config mirroring the Neovim keymaps
 - **[tmux](tmux/)** - Terminal multiplexer configuration
 - **[ghostty](ghostty/)** - GPU-accelerated terminal emulator
 - **[kitty](kitty/)** - GPU-based terminal emulator
@@ -36,81 +37,47 @@ This repository contains configuration files for various tools and applications:
 - **[aerospace](aerospace/)** - Window manager for macOS
 - **[yazi](yazi/)** - Terminal file manager
 - **[oh-my-posh](oh-my-posh/)** - Prompt theme engine
+- **[zed](zed/)** - Zed editor settings and keymap
+- **[vscode](vscode/)** - VS Code / Cursor settings and keybindings
+- **[k9s](k9s/)** - Kubernetes TUI configuration
 - **[homebrew](homebrew/)** - Package manager Brewfile
 - **[fonts](fonts/)** - Custom fonts collection
 - **[wallpapers](wallpapers/)** - Custom wallpapers
 
-## 🚀 Installation
-
-### Prerequisites
-
-**Homebrew**
+## 🚀 Install
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PraveenGongada/dotfiles/main/setup.sh)"
 ```
 
-**Git & Stow**
+Or from a clone: `./setup.sh`.
 
-```bash
-brew install git stow
-```
+Safe to re-run: it only does what's missing and never overwrites files you already have
+(`--force` replaces them, backing up the originals). `./setup.sh --help` for all options.
 
-### Setup Steps
+Afterwards open a new terminal, and start `nvim` once to install plugins.
 
-**1. Clone**
-
-```bash
-cd ~ && git clone git@github.com:PraveenGongada/dotfiles.git
-cd dotfiles
-```
-
-**2. Symlink**
-
-```bash
-stow .
-```
-
-**3. Configure ZSH**
-
-```bash
-echo 'export ZDOTDIR="$HOME/.config/zshrc"' >> ~/.zshenv
-```
-
-**4. Install Packages**
-
-```bash
-brew bundle --file ~/.config/homebrew/Brewfile
-```
-
-### Backup Homebrew Packages
+**Update package list**
 
 ```bash
 brew bundle dump --force --file ~/.config/homebrew/Brewfile --no-describe --tap --formula --cask
 ```
 
-### Install Custom Fonts
+## 📖 Documentation
 
-> ⚠️ **Warning**  
-> This will overwrite any fonts with the same name in your system
+Component-specific guides:
 
-```bash
-find ~/.config/fonts/default/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
-find ~/.config/fonts/store/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
-```
+- **SketchyBar**: [Configuration guide](sketchybar/README.md)
+- **Tmux**: [Key bindings and usage](tmux/README.md)
 
-To install a specific font:
+## ⚙️ Customization
 
-```bash
-find ~/.config/fonts/$PATH_TO_FONT/ -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp {} ~/Library/Fonts/ \;
-```
+These dotfiles are designed to be forked and customized. Key areas to modify:
 
-### Additional Setup
-
-Some components require additional setup steps after installation:
-
-- **SketchyBar**: See [SketchyBar README](sketchybar/README.md) for icons installation and configuration steps
-- **Tmux**: See [TMUX README](tmux/README.md) for TPM installation and plugin setup
+- `zshrc/.zshrc` - Shell aliases and functions
+- `nvim/` - Neovim configuration and plugins
+- `sketchybar/` - Status bar appearance and widgets
+- `homebrew/Brewfile` - Additional packages to install
 
 ## 📝 License
 

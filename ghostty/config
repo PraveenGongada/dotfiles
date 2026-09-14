@@ -21,6 +21,9 @@ macos-titlebar-style = hidden
 # macOS specific settings
 macos-option-as-alt = true
 
+# Over SSH: pass a TERM the host knows and install ghostty's terminfo there once
+shell-integration-features = ssh-env,ssh-terminfo
+
 # Color space and blending for better colors on macOS
 window-colorspace = display-p3
 

@@ -12,8 +12,38 @@ local function echo(str)
 	vim.api.nvim_echo({ { str, "Bold" } }, true, {})
 end
 
+local function protectLockfile()
+	local Lock = require("lazy.manage.lock")
+	local Config = require("lazy.core.config")
+	local update = Lock.update
+	Lock.update = function(...)
+		local lockfile = Config.options.lockfile
+		Lock.load()
+		Config.options.lockfile = lockfile .. ".tmp"
+		local ok, err = pcall(update, ...)
+		Config.options.lockfile = lockfile
+		if ok then
+			os.rename(lockfile .. ".tmp", lockfile)
+			return
+		end
+		os.remove(lockfile .. ".tmp")
+		local broken = {}
+		for _, plugin in pairs(Config.plugins) do
+			if plugin._.installed and not plugin._.is_local and vim.fn.filereadable(plugin.dir .. "/.git/HEAD") == 0 then
+				table.insert(broken, plugin.name)
+			end
+		end
+		vim.notify(
+			"lazy-lock.json not updated: " .. tostring(err) .. "\nbroken plugin dirs: " ..
+			table.concat(broken, ", ") .. " (delete them and run :Lazy restore)",
+			vim.log.levels.WARN
+		)
+	end
+end
+
 local function loadPlugins()
 	vim.opt.rtp:prepend(lazypath)
+	pcall(protectLockfile)
 	require("lazy").setup("plugins", {
 		change_detection = {
 			notify = false,
@@ -25,7 +55,7 @@ local function setup()
 	--------- lazy.nvim ---------------
 	echo("  Installing lazy.nvim & plugins ...")
 	local repo = "https://github.com/folke/lazy.nvim.git"
-	shell_call({ "git", "clone", "--depth=1", "--branch=stable", repo, lazypath })
+	shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, lazypath })
 
 	--------- load plugins ---------------
 	loadPlugins()

@@ -1,5 +1,8 @@
-.git
-.gitignore
-.stowrc
-.DS_Store
+\.git
+\.gitignore
+\.stowrc
+\.DS_Store
 README.*
+^/LICENSE
+^/docs
+^/setup\.sh

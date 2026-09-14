@@ -2,6 +2,8 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Oh My Posh 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k-custom.yaml)"
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/robbyrussell.yaml)"
@@ -97,14 +99,20 @@ alias n="nvim"
 alias lg="lazygit"
 
 # Pomodoro
+notify() {
+  if command -v osascript >/dev/null; then
+    osascript -e "display notification \"$2\" with title \"$1\" sound name \"Crystal\""
+  elif command -v notify-send >/dev/null; then
+    notify-send "$1" "$2"
+  fi
+}
+
 function work () {
-  timer 25m
-  osascript -e 'display notification "Pomodoro" with title "Work Timer is up! Take a Break 😊" sound name "Crystal"'
+  timer 25m && notify "Work Timer is up! Take a Break 😊" "Pomodoro"
 }
 
 function rest () {
-  timer 5m
-  osascript -e 'display notification "Pomodoro" with title "Break is over! Get back to work 😬" sound name "Crystal"'
+  timer 5m && notify "Break is over! Get back to work 😬" "Pomodoro"
 }
 
 # Clear
@@ -125,8 +133,8 @@ kubeadd() {
 
 export ZSH="$HOME/.config/zshrc"
 export GPG_TTY=$(tty)
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$PATH:/Users/praveenkumar/.istioctl/bin"
+export PATH="${GOPATH:-$HOME/go}/bin:$PATH"
+export PATH="$PATH:$HOME/.istioctl/bin"
 export CONFIG_DIR="$HOME/.config/lazygit"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.local/share/zinit/plugins/JanDeDobbeleer/oh-my-posh:$PATH"
@@ -138,5 +146,4 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
 # Kubectl completion
-source <(kubectl completion zsh)
-export PATH="$HOME/.local/bin:$PATH"
+command -v kubectl >/dev/null && source <(kubectl completion zsh)

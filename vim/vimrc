@@ -1,0 +1,190 @@
+set nocompatible
+set encoding=utf-8
+
+let mapleader = " "
+let maplocalleader = " "
+
+" Cursor shape
+set guicursor=
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+let &t_SR = "\e[4 q"
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+autocmd InsertEnter * silent !echo -ne "\e[6 q"
+autocmd InsertLeave * silent !echo -ne "\e[2 q"
+
+" General
+set hidden
+set laststatus=2
+set noshowmode
+set showcmd
+set ruler
+if has('clipboard')
+  set clipboard^=unnamed,unnamedplus
+endif
+set nocursorline
+set mouse=a
+set backspace=indent,eol,start
+set shortmess+=I
+
+" Indentation
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set autoindent
+set smartindent
+
+" Search
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Line numbers
+set number
+set relativenumber
+set numberwidth=2
+set signcolumn=yes
+
+" Display
+set fillchars=eob:\ 
+set splitbelow
+set splitright
+set background=dark
+if has('termguicolors')
+  set termguicolors
+endif
+set scrolloff=10
+set synmaxcol=300
+set redrawtime=10000
+set whichwrap+=<,>,[,],h,l
+set nolazyredraw
+set ttyfast
+
+" Timing
+set timeoutlen=300
+set ttimeout
+set ttimeoutlen=10
+set updatetime=250
+
+" Persistent undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+set undodir=~/.vim/undo
+if !isdirectory(&undodir)
+  call mkdir(&undodir, 'p', 0700)
+endif
+
+set history=1000
+
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+endif
+
+" Wildmenu
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*/node_modules/*,*/.git/*,*/dist/*,*/build/*,*/vendor/*
+set wildignore+=*.o,*.a,*.out,*.class,*.pdf,*.mkv,*.mp4,*.zip
+set wildignore+=*.png,*.jpg,*.jpeg,.DS_Store,*.res,*.mp3,*.ttf,*.otf
+
+" Disable unused built-ins
+let g:loaded_2html_plugin = 1
+let g:loaded_getscript = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_gzip = 1
+let g:loaded_logipat = 1
+let g:loaded_rrhelper = 1
+let g:loaded_spellfile_plugin = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_vimball = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
+
+" Comment package (Vim 9.1+)
+if !empty(globpath(&packpath, 'pack/dist/opt/comment', 1))
+  packadd comment
+  nmap <leader>/ gcc
+  xmap <leader>/ gc
+endif
+
+" ---------------------------------------------------------------- Insert mode
+
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-b> <Esc>^i
+inoremap <C-e> <End>
+inoremap jj <Esc>
+
+" ---------------------------------------------------------------- Normal mode
+
+" Window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+nnoremap <C-s> :w<CR>
+nnoremap <C-c> :%y+<CR>
+nnoremap <silent> <Esc> :noh<CR>
+
+" Wrapped lines
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> <Down> (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> <Up> (v:count == 0 ? 'gk' : 'k')
+
+nnoremap <leader>b :enew<CR>
+
+" Delete without yanking
+nnoremap x "_x
+
+" Increment / decrement
+nnoremap <leader>+ <C-a>
+nnoremap <leader>- <C-x>
+
+" Windows
+nnoremap <leader>sv <C-w>v
+nnoremap <leader>sh <C-w>s
+nnoremap <leader>se <C-w>=
+nnoremap <leader>sx :close<CR>
+
+" Tabs
+nnoremap <leader>to :tabnew<CR>
+nnoremap <leader>tx :tabclose<CR>
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>tp :tabp<CR>
+nnoremap <leader>tf :tabnew %<CR>
+
+" Buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
+nnoremap <leader>x :bdelete<CR>
+
+nnoremap <Space> <Nop>
+
+" ---------------------------------------------------------------- Visual mode
+
+vnoremap <expr> <Down> (v:count == 0 ? 'gj' : 'j')
+vnoremap <expr> <Up> (v:count == 0 ? 'gk' : 'k')
+
+" Indent
+vnoremap < <gv
+vnoremap > >gv
+
+" Paste without yanking
+vnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>
+
+vnoremap <Space> <Nop>
+
+" ---------------------------------------------------------------- Visual-line mode
+
+xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+xnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>

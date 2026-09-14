@@ -47,6 +47,7 @@ brew "velero"
 brew "yarn"
 brew "yazi"
 brew "zoxide"
+brew "felixkratz/formulae/sketchybar"
 brew "charmbracelet/tap/crush", trusted: true
 brew "hashicorp/tap/vault", trusted: true
 brew "praveengongada/tap/catalyst", trusted: true
