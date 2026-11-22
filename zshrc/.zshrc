@@ -60,7 +60,29 @@ ZVM_VI_VISUAL_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 ZVM_VI_OPPEND_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 
 # Source .fzf.zsh so that the ctrl+r bindkey is given back fzf
-zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
+zvm_after_init_commands+=('eval "$(fzf --zsh)"')
+
+if [[ -n "$HC_TERMINAL_ID" ]]; then
+  herdr-pane-left()  { herdr-app do pane.go --direction left  &>/dev/null }
+  herdr-pane-down()  { herdr-app do pane.go --direction down  &>/dev/null }
+  herdr-pane-up()    { herdr-app do pane.go --direction up    &>/dev/null }
+  herdr-pane-right() { herdr-app do pane.go --direction right &>/dev/null }
+  zle -N herdr-pane-left
+  zle -N herdr-pane-down
+  zle -N herdr-pane-up
+  zle -N herdr-pane-right
+  herdr-pane-keys() {
+    local m
+    for m in viins vicmd emacs; do
+      bindkey -M $m '^H' herdr-pane-left
+      bindkey -M $m '^J' herdr-pane-down
+      bindkey -M $m '^K' herdr-pane-up
+      bindkey -M $m '^L' herdr-pane-right
+    done
+  }
+  zvm_after_init_commands+=(herdr-pane-keys)
+  zvm_after_lazy_keybindings_commands+=(herdr-pane-keys)
+fi
 
 # Syntax Hihghlighting
 typeset -A ZSH_HIGHLIGHT_STYLES

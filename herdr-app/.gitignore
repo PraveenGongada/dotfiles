@@ -1,0 +1,4 @@
+*.d.ts
+jsconfig.json
+*.error
+mods/material-files/material/

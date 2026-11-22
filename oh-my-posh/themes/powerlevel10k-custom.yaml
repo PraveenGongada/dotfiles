@@ -38,18 +38,6 @@ blocks:
     style: plain
   newline: true
 - type: prompt
-  alignment: right
-  segments:
-  - options:
-      parse_kubeconfig: true
-    template: "☸ {{ .Context }} "
-    foreground: "#326ce5"
-    background: transparent
-    type: kubectl
-    style: plain
-    foreground_templates:
-    - '{{ if or (contains "prod" (lower .Cluster)) (contains "prod" (lower .Context)) }}#d9534f{{ end }}'
-- type: prompt
   alignment: left
   segments:
   - template: ❯
@@ -62,3 +50,4 @@ blocks:
   newline: true
 version: 3
 final_space: true
+enable_cursor_positioning: true

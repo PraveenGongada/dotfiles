@@ -22,3 +22,25 @@ gui:
       - "#ffbd5e"
     defaultFgColor:
       - "#ffffff"
+keybinding:
+  commits:
+    moveDownCommit: <disabled>
+    moveUpCommit: <disabled>
+    openLogMenu: <disabled>
+customCommands:
+  - key: <c-h>
+    context: global
+    description: Herdr pane left
+    command: 'if [ -n "$HC_TERMINAL_ID" ]; then herdr-app do pane.go --direction left; fi'
+  - key: <c-j>
+    context: global
+    description: Herdr pane down
+    command: 'if [ -n "$HC_TERMINAL_ID" ]; then herdr-app do pane.go --direction down; fi'
+  - key: <c-k>
+    context: global
+    description: Herdr pane up
+    command: 'if [ -n "$HC_TERMINAL_ID" ]; then herdr-app do pane.go --direction up; fi'
+  - key: <c-l>
+    context: global
+    description: Herdr pane right
+    command: 'if [ -n "$HC_TERMINAL_ID" ]; then herdr-app do pane.go --direction right; fi'

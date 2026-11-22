@@ -1,0 +1,168 @@
+{
+  "id": "root",
+  "cloned_from": {
+    "name": "main",
+    "version": "0.1.16"
+  },
+  "type": "row",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "children": [
+        {
+          "id": "brand",
+          "type": "block",
+          "content": {
+            "mod": "my-chrome"
+          },
+          "size": {
+            "px": 42
+          },
+          "window_drag": true
+        },
+        {
+          "id": "sidebar-body",
+          "type": "stack",
+          "active": "home",
+          "children": [
+            {
+              "id": "home",
+              "type": "column",
+              "children": [
+                {
+                  "id": "spaces",
+                  "type": "block",
+                  "content": {
+                    "mod": "my-spaces"
+                  },
+                  "size": {
+                    "weight": 1
+                  },
+                  "min": 90
+                },
+                {
+                  "id": "agents",
+                  "type": "block",
+                  "content": {
+                    "mod": "agents"
+                  },
+                  "size": {
+                    "weight": 1
+                  },
+                  "min": 90
+                }
+              ]
+            },
+            {
+              "id": "files",
+              "type": "block",
+              "content": {
+                "mod": "material-files"
+              }
+            },
+            {
+              "id": "changes",
+              "type": "block",
+              "content": {
+                "mod": "vscode-diff"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sidebar-footer",
+          "type": "block",
+          "content": {
+            "mod": "my-chrome",
+            "props": {
+              "footer": true
+            }
+          },
+          "size": {
+            "px": 34
+          }
+        }
+      ],
+      "size": {
+        "px": 268
+      },
+      "min": 44,
+      "max": 480,
+      "background": "chrome",
+      "resizable": false
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "children": [
+        {
+          "id": "tabs",
+          "type": "block",
+          "content": {
+            "mod": "my-tabs"
+          },
+          "size": {
+            "px": 42
+          },
+          "window_drag": true
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "background": "background",
+                  "border": {
+                    "width": 1,
+                    "color": "border"
+                  },
+                  "focus": {
+                    "width": 1,
+                    "color": "#4a4a4a"
+                  },
+                  "radius": 10,
+                  "gap": 8,
+                  "lone": true
+                }
+              }
+            }
+          ],
+          "padding": 8,
+          "gap": 8
+        },
+        {
+          "id": "status",
+          "type": "block",
+          "content": {
+            "mod": "my-status"
+          },
+          "size": {
+            "px": 34
+          }
+        }
+      ],
+      "resizable": false
+    }
+  ],
+  "background": "canvas",
+  "terminal_padding": [
+    14,
+    12
+  ],
+  "divider": {
+    "width": 1,
+    "color": "border"
+  },
+  "titlebar": "none",
+  "traffic_lights": [
+    12,
+    14
+  ],
+  "theme": "pitch-black"
+}
