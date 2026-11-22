@@ -1,6 +1,6 @@
 import { View, div, image } from "gpui-kit";
 import { v_flex, h_flex, Scrollbar, v_virtual_list } from "gpui-base";
-import { props, spaces, panes, run, exec, readTextFile, watchFolder, theme, settings, shared, setShared, checking } from "herdr";
+import { props, spaces, panes, run, exec, readTextFile, watchFolder, theme, settings, shared, setShared, checking, layout } from "herdr";
 import { untab, ROW, GUTTER, SPLIT_MIN, MAX_LINES, C, GIT, paint, langOf, iconFor, build } from "./engine.js";
 
 const READ = ["--no-optional-locks", "-c", "core.fsmonitor=false", "-c", "diff.autoRefreshIndex=false"];
@@ -18,6 +18,15 @@ async function openInNvim({ root, path, on, line }) {
   }
   await exec("rm", ["-f", sock], where).catch(() => null);
   run("tab.new", { space: space.id, name: "nvim", folder: root, argv: ["nvim", "--listen", sock, ...(line ? [`+${line}`] : []), file] });
+}
+
+function find(node, id) {
+  if (node?.id === id) return node;
+  for (const child of node?.children ?? []) {
+    const found = find(child, id);
+    if (found) return found;
+  }
+  return null;
 }
 
 export default class Viewer extends View {
@@ -39,6 +48,7 @@ export default class Viewer extends View {
 
   async close() {
     this.watching?.cancel();
+    if (find(layout(), "sidebar-body")?.active === "changes") run("layout.select", { stack: "sidebar-body", child: "home" });
   }
 
   watch(cx) {
