@@ -3,3 +3,4 @@
 .stowrc
 .DS_Store
 README.*
+^/zen

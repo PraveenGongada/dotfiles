@@ -37,6 +37,7 @@ This repository contains configuration files for various tools and applications:
 - **[yazi](yazi/)** - Terminal file manager
 - **[herdr-app](herdr-app/)** - Herdr layout, keys, and mods
 - **[oh-my-posh](oh-my-posh/)** - Prompt theme engine
+- **[zen](zen/)** - CSS, shortcuts and extensions
 - **[homebrew](homebrew/)** - Package manager Brewfile
 - **[fonts](fonts/)** - Custom fonts collection
 - **[wallpapers](wallpapers/)** - Custom wallpapers
@@ -113,6 +114,7 @@ Some components require additional setup steps after installation:
 - **SketchyBar**: See [SketchyBar README](sketchybar/README.md) for icons installation and configuration steps
 - **Tmux**: See [TMUX README](tmux/README.md) for TPM installation and plugin setup
 - **Herdr**: Run `scripts/fetch-material-icons.sh` for the file icons
+- **Zen**: See [Zen README](zen/README.md) to link the config into your Zen profile
 
 ## 📝 License
 

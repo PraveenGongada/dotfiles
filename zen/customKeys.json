@@ -1,0 +1,15 @@
+{
+  "zen-compact-mode-toggle": {
+    "modifiers": "control",
+    "key": "N"
+  },
+  "key_newNavigator": {},
+  "zen-new-unsynced-window": {
+    "modifiers": "accel",
+    "key": "N"
+  },
+  "key_privatebrowsing": {
+    "modifiers": "accel,shift",
+    "key": "N"
+  }
+}

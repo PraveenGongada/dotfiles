@@ -1,0 +1,12 @@
+:root[zen-private-window] :is(.zen-current-workspace-indicator-stack, .pinned-tabs-container-separator) {
+  display: none !important;
+}
+
+:root[zen-private-window] .zen-current-workspace-indicator-name {
+  font-size: 0 !important;
+
+  &::after {
+    content: "Incognito Tabs";
+    font-size: small;
+  }
+}
